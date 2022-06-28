@@ -200,9 +200,9 @@ vim.api.nvim_set_keymap("n", "<C-n>", [[ <cmd> NvimTreeToggle<CR>]], { noremap =
 vim.api.nvim_set_keymap("n", "<leader>r", [[ <cmd> NvimTreeRefresh<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>n", [[ <cmd> NvimTreeFindFile<CR>]], { noremap = true, silent = true })
 require("nvim-tree").setup({
-    view = {
-        side = "right"
-    }
+	view = {
+		side = "right",
+	},
 })
 
 -- bufferline
