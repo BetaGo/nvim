@@ -199,7 +199,11 @@ require("telescope").setup({
 vim.api.nvim_set_keymap("n", "<C-n>", [[ <cmd> NvimTreeToggle<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>r", [[ <cmd> NvimTreeRefresh<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>n", [[ <cmd> NvimTreeFindFile<CR>]], { noremap = true, silent = true })
-require("nvim-tree").setup({})
+require("nvim-tree").setup({
+    view = {
+        side = "right"
+    }
+})
 
 -- bufferline
 vim.api.nvim_set_keymap("n", "[b", [[ <cmd> BufferLineCyclePrev<CR>]], { noremap = true, silent = true })
