@@ -4,13 +4,16 @@ require("packer-conf")
 require("custom-theme")
 
 require("plugins.bufferline")
+require("plugins.dressing")
 require("plugins.indent-blankline")
+require("plugins.legendary")
 require("plugins.neoformat")
 require("plugins.nvim-tree")
 require("plugins.nvim-treesitter")
 require("plugins.symbols-outline")
 require("plugins.telescope")
 require("plugins.vim-fugitive")
+require("plugins.which-key")
 
 require("lsp")
 

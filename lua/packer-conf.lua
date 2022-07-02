@@ -42,5 +42,7 @@ require("packer").startup(function()
 	use({ "github/copilot.vim" })
 	use({ "vim-airline/vim-airline" })
 	use({ "simrat39/symbols-outline.nvim" })
+	use({ "stevearc/dressing.nvim" })
+	use({ "mrjones2014/legendary.nvim" })
+	use({ "folke/which-key.nvim" })
 end)
-
