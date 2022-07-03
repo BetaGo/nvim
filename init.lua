@@ -1,3 +1,7 @@
+
+-- download config
+vim.g.download_plugin_use_ssh = true
+
 require("settings")
 require("keymap")
 require("packer-conf")
