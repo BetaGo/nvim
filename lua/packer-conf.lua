@@ -2,8 +2,8 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	if vim.o.download_plugin_use_ssh then
-		vim.fn.execute("!git clone git@github:wbthomason/packer.nvim " .. install_path)
+	if vim.g.download_plugin_use_ssh == true then
+		vim.fn.execute("!git clone git@github.com:wbthomason/packer.nvim " .. install_path)
 	else
 		vim.fn.execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
 	end
@@ -47,7 +47,6 @@ require("packer").startup {
 		use({ "vim-airline/vim-airline" })
 		use({ "simrat39/symbols-outline.nvim" })
 		use({ "stevearc/dressing.nvim" })
-		use({ "mrjones2014/legendary.nvim" })
 		use({ "folke/which-key.nvim" })
 	end,
 	config = {
