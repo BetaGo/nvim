@@ -12,7 +12,6 @@ else
 	require("plugins.bufferline")
 	require("plugins.dressing")
 	require("plugins.indent-blankline")
-	require("plugins.legendary")
 	require("plugins.neoformat")
 	require("plugins.nvim-tree")
 	require("plugins.nvim-treesitter")
