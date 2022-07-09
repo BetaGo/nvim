@@ -56,6 +56,25 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
+-- nvim tree
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>r",
+	[[<cmd>NvimTreeRefresh<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>n",
+	[[<cmd>NvimTreeFindFile<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"<C-n>",
+	[[<cmd>NvimTreeToggle<CR>]],
+	{ noremap = true, silent = true }
+)
 -- legendary
 vim.api.nvim_set_keymap("n", "<leader>?", [[<cmd> Legendary<CR>]], { noremap = true, silent = true })
 
