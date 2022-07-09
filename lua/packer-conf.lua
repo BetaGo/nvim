@@ -16,10 +16,10 @@ vim.cmd([[
   augroup end
 ]])
 
-local default_url_format =  vim.g.download_plugin_use_ssh and "git@github.com:%s" or "https://github.com/%s"
+local default_url_format = vim.g.download_plugin_use_ssh and "git@github.com:%s" or "https://github.com/%s"
 
 local use = require("packer").use
-require("packer").startup {
+require("packer").startup({
 	function()
 		use("wbthomason/packer.nvim") -- Package manager
 		use("tpope/vim-fugitive") -- Git commands in nvim
@@ -28,6 +28,7 @@ require("packer").startup {
 		-- UI to select things (files, grep results, open buffers...)
 		use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 		use("arcticicestudio/nord-vim")
+		use("joshdick/onedark.vim")
 		-- Add indentation guides even on blank lines
 		use("lukas-reineke/indent-blankline.nvim")
 		-- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -48,9 +49,11 @@ require("packer").startup {
 		use({ "simrat39/symbols-outline.nvim" })
 		use({ "stevearc/dressing.nvim" })
 		use({ "folke/which-key.nvim" })
+		use({ "mrjones2014/legendary.nvim" })
 	end,
 	config = {
 		git = {
-			default_url_format = default_url_format	}
-	}
-}
+			default_url_format = default_url_format,
+		},
+	},
+})

@@ -18,6 +18,9 @@ else
 	require("plugins.symbols-outline")
 	require("plugins.telescope")
 	require("plugins.vim-fugitive")
+
+    -- Order is required
+	require("plugins.legendary")
 	require("plugins.which-key")
 
 	require("lsp")

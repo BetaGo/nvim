@@ -1,5 +1,5 @@
 --Remap space as leader key
-vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -11,7 +11,6 @@ vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
-
 --Add leader shortcuts
 vim.api.nvim_set_keymap(
 	"n",
@@ -19,12 +18,7 @@ vim.api.nvim_set_keymap(
 	[[<cmd>lua require('telescope.builtin').buffers()<CR>]],
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>sf",
-	[[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]],
-	{ noremap = true, silent = true }
-)
+
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>sb",
@@ -61,12 +55,9 @@ vim.api.nvim_set_keymap(
 	[[<cmd>lua require('telescope.builtin').live_grep()<CR>]],
 	{ noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>?",
-	[[<cmd>lua require('telescope.builtin').oldfiles()<CR>]],
-	{ noremap = true, silent = true }
-)
+
+-- legendary
+vim.api.nvim_set_keymap("n", "<leader>?", [[<cmd> Legendary<CR>]], { noremap = true, silent = true })
 
 -- bufferline
 vim.api.nvim_set_keymap("n", "[b", [[ <cmd> BufferLineCyclePrev<CR>]], { noremap = true, silent = true })
