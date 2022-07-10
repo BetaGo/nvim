@@ -50,6 +50,7 @@ require("packer").startup({
 		use({ "stevearc/dressing.nvim" })
 		use({ "folke/which-key.nvim" })
 		use({ "mrjones2014/legendary.nvim" })
+		use({ "lambdalisue/suda.vim" }) -- open & write file as sudo
 	end,
 	config = {
 		git = {
