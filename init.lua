@@ -9,6 +9,8 @@ else
 	require("packer-conf")
 	require("custom-theme")
 
+    require("plugins.neovide")
+
     require("plugins.airline")
 	require("plugins.bufferline")
 	require("plugins.dressing")
