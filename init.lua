@@ -10,6 +10,7 @@ else
 	require("custom-theme")
 
     require("plugins.neovide")
+    require("plugins.nvim-notify")
 
     require("plugins.airline")
 	require("plugins.bufferline")
