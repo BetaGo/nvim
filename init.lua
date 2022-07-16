@@ -38,7 +38,3 @@ vim.cmd([[
   augroup end
 ]])
 
--- expakd all fold
-vim.cmd([[
-    autocmd BufReadPost,FileReadPost * normal zR
-]])

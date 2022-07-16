@@ -23,12 +23,14 @@ require("packer").startup({
 	function()
 		use("wbthomason/packer.nvim") -- Package manager
 		use("tpope/vim-fugitive") -- Git commands in nvim
+        use("kdheepak/lazygit.nvim")
 		use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 		use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
 		-- UI to select things (files, grep results, open buffers...)
 		use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 		use("arcticicestudio/nord-vim")
 		use("joshdick/onedark.vim")
+        use("sainnhe/everforest")
 		-- Add indentation guides even on blank lines
 		use("lukas-reineke/indent-blankline.nvim")
 		-- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -58,6 +60,11 @@ require("packer").startup({
 			config = function()
 				require("alpha").setup(require("alpha.themes.startify").config)
 			end,
+		}) -- greeter for neovim
+		use("jmcantrell/vim-diffchanges") -- diff local changes
+		use({
+			"anuvyklack/pretty-fold.nvim",
+			requires = "anuvyklack/nvim-keymap-amend", -- only for preview
 		})
 	end,
 	config = {

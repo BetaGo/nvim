@@ -32,6 +32,7 @@ local settings = {
 	-- numberwidth = 4,                         -- set number column width to 2 {default 4}
 	-- signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
 	-- wrap = false,                            -- display lines as one long line
+    foldcolumn = '2',
 }
 
 vim.o.completeopt = "menuone,noselect"

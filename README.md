@@ -1,5 +1,13 @@
 # Additional config
 
+## install rigrep
+
+- https://github.com/BurntSushi/ripgrep#installation
+
+## install lazygit
+
+- https://github.com/jesseduffield/lazygit
+
 ## Windows wsl
 
 ### set clipboard
