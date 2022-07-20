@@ -31,6 +31,7 @@ require("packer").startup({
 		use("arcticicestudio/nord-vim")
 		use("joshdick/onedark.vim")
 		use("sainnhe/everforest")
+		use("folke/tokyonight.nvim")
 		-- Add indentation guides even on blank lines
 		use("lukas-reineke/indent-blankline.nvim")
 		-- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -71,6 +72,7 @@ require("packer").startup({
 			"folke/trouble.nvim",
 			requires = "kyazdani42/nvim-web-devicons",
 		})
+		use({ "nmac427/guess-indent.nvim" })
 	end,
 	config = {
 		git = {
