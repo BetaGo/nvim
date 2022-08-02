@@ -3,6 +3,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.api.nvim_set_keymap(
+	"i",
+	"jj",
+	"<Esc>",
+	{ noremap = true, silent = true }
+)
 -- terminal
 
 -- vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
