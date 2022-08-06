@@ -52,7 +52,6 @@ require("packer").startup({
 		use({ "simrat39/symbols-outline.nvim" })
 		use({ "stevearc/dressing.nvim" })
 		use({ "folke/which-key.nvim" })
-		use({ "mrjones2014/legendary.nvim" })
 		use({ "lambdalisue/suda.vim" }) -- open & write file as sudo
 		use("rcarriga/nvim-notify")
 		use({
@@ -73,6 +72,7 @@ require("packer").startup({
 			requires = "kyazdani42/nvim-web-devicons",
 		})
 		use({ "nmac427/guess-indent.nvim" })
+		use({ "lewis6991/spellsitter.nvim" })
 	end,
 	config = {
 		git = {

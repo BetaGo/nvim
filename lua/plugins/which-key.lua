@@ -5,12 +5,7 @@ wk.register({
 	c = {
 		name = "code",
 		l = { "<cmd>SymbolsOutline<cr>", "Show SymbolsOutline" },
-		r = { "<cmd> lua require('telescope.builtin').lsp_references()<cr>", "show references" },
-		i = {
-			"<cmd> lua require('telescope.builtin').implementations()<cr>",
-			"goto the implementation of the word under the cursor",
-		},
-		e = { "<cmd> lua require('telescope.builtin').diagnostics()<cr>", "show diagnositics for all open buffers" },
+		e = { "<cmd>lua require('telescope.builtin').diagnostics()<cr>", "show diagnositics for all open buffers" },
 	},
 }, { prefix = "<leader>" })
 

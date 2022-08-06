@@ -25,43 +25,6 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>sb",
-	[[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]],
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>sh",
-	[[<cmd>lua require('telescope.builtin').help_tags()<CR>]],
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>ss",
-	[[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]],
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>sr",
-	[[<cmd>lua require('telescope.builtin').lsp_references()<CR>]],
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>sd",
-	[[<cmd>lua require('telescope.builtin').grep_string()<CR>]],
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>sp",
-	[[<cmd>lua require('telescope.builtin').live_grep()<CR>]],
-	{ noremap = true, silent = true }
-)
-
 -- nvim tree
 vim.api.nvim_set_keymap(
 	"n",
@@ -81,8 +44,6 @@ vim.api.nvim_set_keymap(
 	[[<cmd>NvimTreeToggle<CR>]],
 	{ noremap = true, silent = true }
 )
--- legendary
-vim.api.nvim_set_keymap("n", "<leader>?", [[<cmd> Legendary<CR>]], { noremap = true, silent = true })
 
 -- bufferline
 vim.api.nvim_set_keymap("n", "[b", [[ <cmd> BufferLineCyclePrev<CR>]], { noremap = true, silent = true })

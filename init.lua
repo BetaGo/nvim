@@ -1,10 +1,11 @@
 -- download config
 vim.g.download_plugin_use_ssh = true
 
+require("settings")
+
 if vim.g.vscode then
-	print("run in vscode")
+	require("vscode.keymap")
 else
-	require("settings")
 	require("keymap")
 	require("packer-conf")
 	require("custom-theme")
@@ -21,13 +22,11 @@ else
 	require("plugins.nvim-tree")
 	require("plugins.nvim-treesitter")
 	require("plugins.pretty-fold")
+	require("plugins.spellsitter")
 	require("plugins.symbols-outline")
 	require("plugins.telescope")
-    require("plugins.trouble")
+	require("plugins.trouble")
 	require("plugins.vim-fugitive")
-
-	-- Order is required
-	require("plugins.legendary")
 	require("plugins.which-key")
 
 	require("lsp")
@@ -40,4 +39,3 @@ vim.cmd([[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]])
-
