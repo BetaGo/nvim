@@ -26,6 +26,7 @@ require("packer").startup({
 		use("kdheepak/lazygit.nvim")
 		use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 		use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
+		use("JoosepAlviste/nvim-ts-context-commentstring") -- jsx comment support
 		-- UI to select things (files, grep results, open buffers...)
 		use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 		use("arcticicestudio/nord-vim")
@@ -73,6 +74,7 @@ require("packer").startup({
 		})
 		use({ "nmac427/guess-indent.nvim" })
 		use({ "lewis6991/spellsitter.nvim" })
+		use("ap/vim-css-color")
 	end,
 	config = {
 		git = {

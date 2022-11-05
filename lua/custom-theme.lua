@@ -8,8 +8,8 @@ vim.o.background = "dark"
 -- vim.cmd([[colorscheme onedark]])
 -- vim.g.airline_theme = "onedark"
 
--- vim.cmd([[colorscheme nord]])
-vim.cmd([[colorscheme everforest]])
+vim.cmd([[colorscheme nord]])
+-- vim.cmd([[colorscheme everforest]])
 -- vim.cmd([[colorscheme tokyonight]])
 
 vim.g.airline_powerline_fonts = 1

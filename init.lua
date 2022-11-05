@@ -1,5 +1,5 @@
 -- download config
-vim.g.download_plugin_use_ssh = true
+vim.g.download_plugin_use_ssh = false
 
 require("settings")
 
