@@ -148,3 +148,29 @@ vim.api.nvim_set_keymap(
 	[[<cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>]],
 	{ noremap = true, silent = true }
 )
+
+-- fold ubfold
+vim.api.nvim_set_keymap(
+	"n",
+	"zc",
+	[[<cmd>call VSCodeNotify('editor.fold')<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"x",
+	"zc",
+	[[<cmd>call VSCodeNotify('editor.fold')<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"zo",
+	[[<cmd>call VSCodeNotify('editor.unfold')<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"x",
+	"zo",
+	[[<cmd>call VSCodeNotify('editor.unfold')<CR>]],
+	{ noremap = true, silent = true }
+)
