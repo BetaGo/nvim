@@ -1,62 +1,18 @@
-local stages_util = require("notify.stages.util")
-
-require("notify").setup({
-    stages = {
-      function(state)
-        local next_height = state.message.height + 2
-        local next_row = stages_util.available_slot(
-          state.open_windows,
-          next_height,
-          stages_util.DIRECTION.BOTTOM_UP
-        )
-        if not next_row then
-          return nil
-        end
-        return {
-          relative = "editor",
-          anchor = "NE",
-          width = state.message.width,
-          height = state.message.height,
-          col = vim.opt.columns:get(),
-          row = next_row,
-          border = "rounded",
-          style = "minimal",
-          opacity = 0,
-        }
-      end,
-      function()
-        return {
-          opacity = { 100 },
-          col = { vim.opt.columns:get() },
-        }
-      end,
-      function()
-        return {
-          col = { vim.opt.columns:get() },
-          time = true,
-        }
-      end,
-      function()
-        return {
-          width = {
-            1,
-            frequency = 2.5,
-            damping = 0.9,
-            complete = function(cur_width)
-              return cur_width < 3
-            end,
-          },
-          opacity = {
-            0,
-            frequency = 2,
-            complete = function(cur_opacity)
-              return cur_opacity <= 4
-            end,
-          },
-          col = { vim.opt.columns:get() },
-        }
-      end,
-    },
-  })
+-- require("notify").setup({})
 vim.notify = require("notify")
+vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
+  config = config or {}
+  config.focus_id = ctx.method
+  if not (result and result.contents) then
+    -- vim.notify('No information available')
+    return
+  end
+  local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+  markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
+  if vim.tbl_isempty(markdown_lines) then
+    -- vim.notify('No information available')
+    return
+  end
+  return vim.lsp.util.open_floating_preview(markdown_lines, 'markdown', config)
+end
 
