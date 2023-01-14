@@ -32,7 +32,7 @@ require("packer").startup({
 		use("arcticicestudio/nord-vim")
 		use("joshdick/onedark.vim")
 		use("sainnhe/everforest")
-		use("folke/tokyonight.nvim")
+		-- use("folke/tokyonight.nvim")
 		-- Add indentation guides even on blank lines
 		use("lukas-reineke/indent-blankline.nvim")
 		-- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -49,7 +49,8 @@ require("packer").startup({
 		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 		use({ "kassio/neoterm" })
 		use({ "sbdchd/neoformat" })
-		use({ "vim-airline/vim-airline" })
+		-- use({ "vim-airline/vim-airline" })
+		use({ "nvim-lualine/lualine.nvim" })
 		use({ "simrat39/symbols-outline.nvim" })
 		use({ "stevearc/dressing.nvim" })
 		use({ "folke/which-key.nvim" })

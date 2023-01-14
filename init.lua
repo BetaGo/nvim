@@ -13,7 +13,8 @@ else
 	require("plugins.neovide")
 	require("plugins.nvim-notify")
 
-	require("plugins.airline")
+	-- require("plugins.airline")
+    require("plugins.lualine")
 	require("plugins.bufferline")
 	require("plugins.todo-comments")
 	require("plugins.dressing")
