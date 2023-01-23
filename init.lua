@@ -28,6 +28,7 @@ else
 	require("plugins.trouble")
 	require("plugins.vim-fugitive")
 	require("plugins.which-key")
+    require("plugins.transparent")
 
 	require("lsp")
 end

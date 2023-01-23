@@ -45,7 +45,7 @@ require("packer").startup({
 		use("saadparwaiz1/cmp_luasnip")
 		use("L3MON4D3/LuaSnip") -- Snippets plugin
 		use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
-		use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
+		use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "kyazdani42/nvim-web-devicons" })
 		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 		use({ "kassio/neoterm" })
 		use({ "sbdchd/neoformat" })
@@ -76,6 +76,7 @@ require("packer").startup({
 		use({ "nmac427/guess-indent.nvim" })
 		use({ "lewis6991/spellsitter.nvim" })
 		use("ap/vim-css-color")
+        use("xiyaowong/nvim-transparent")
 	end,
 	config = {
 		git = {
