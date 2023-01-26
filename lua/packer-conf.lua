@@ -23,7 +23,7 @@ require("packer").startup({
 	function()
 		use("wbthomason/packer.nvim") -- Package manager
 		use("kdheepak/lazygit.nvim")
-        use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
+		use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- jsx comment support
 		-- UI to select things (files, grep results, open buffers...)
 		use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
