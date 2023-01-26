@@ -22,17 +22,12 @@ local use = require("packer").use
 require("packer").startup({
 	function()
 		use("wbthomason/packer.nvim") -- Package manager
-		use("tpope/vim-fugitive") -- Git commands in nvim
 		use("kdheepak/lazygit.nvim")
-		use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
-		use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
+        use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- jsx comment support
 		-- UI to select things (files, grep results, open buffers...)
 		use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 		use("arcticicestudio/nord-vim")
-		use("joshdick/onedark.vim")
-		use("sainnhe/everforest")
-		-- use("folke/tokyonight.nvim")
 		-- Add indentation guides even on blank lines
 		use("lukas-reineke/indent-blankline.nvim")
 		-- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -49,7 +44,6 @@ require("packer").startup({
 		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 		use({ "kassio/neoterm" })
 		use({ "sbdchd/neoformat" })
-		-- use({ "vim-airline/vim-airline" })
 		use({ "nvim-lualine/lualine.nvim" })
 		use({ "simrat39/symbols-outline.nvim" })
 		use({ "stevearc/dressing.nvim" })
@@ -72,11 +66,10 @@ require("packer").startup({
 		use({
 			"folke/trouble.nvim",
 			requires = "kyazdani42/nvim-web-devicons",
-		})
+		}) -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
 		use({ "nmac427/guess-indent.nvim" })
 		use({ "lewis6991/spellsitter.nvim" })
 		use("ap/vim-css-color")
-        use("xiyaowong/nvim-transparent")
 	end,
 	config = {
 		git = {

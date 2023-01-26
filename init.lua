@@ -15,6 +15,7 @@ else
 
 	require("plugins.lualine")
 	require("plugins.bufferline")
+    require("plugins.Comment")
 	require("plugins.todo-comments")
 	require("plugins.dressing")
 	require("plugins.indent-blankline")
@@ -28,7 +29,6 @@ else
 	require("plugins.trouble")
 	require("plugins.vim-fugitive")
 	require("plugins.which-key")
-    require("plugins.transparent")
 
 	require("lsp")
 end
