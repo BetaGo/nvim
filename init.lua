@@ -13,6 +13,8 @@ else
 	require("plugins.neovide")
 	require("plugins.nvim-notify")
 
+    require("plugins.alpha")
+
 	require("plugins.lualine")
 	require("plugins.bufferline")
 	require("plugins.Comment")
