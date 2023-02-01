@@ -27,7 +27,8 @@ require("packer").startup({
 		use("JoosepAlviste/nvim-ts-context-commentstring") -- jsx comment support
 		-- UI to select things (files, grep results, open buffers...)
 		use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
-		use("arcticicestudio/nord-vim")
+		-- use("arcticicestudio/nord-vim")
+		use("shaunsingh/nord.nvim")
 		-- Add indentation guides even on blank lines
 		use("lukas-reineke/indent-blankline.nvim")
 		-- Highlight, edit, and navigate code using a fast incremental parsing library
