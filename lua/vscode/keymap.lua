@@ -174,3 +174,29 @@ vim.api.nvim_set_keymap(
 	[[<cmd>call VSCodeNotify('editor.unfold')<CR>]],
 	{ noremap = true, silent = true }
 )
+
+-- Commentary
+vim.api.nvim_set_keymap(
+	"x",
+	"gc",
+	[[<cmd><Plug>VSCodeCommentary<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"gc",
+	[[<cmd><Plug>VSCodeCommentary<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"o",
+	"gc",
+	[[<cmd><Plug>VSCodeCommentary<CR>]],
+	{ noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+	"n",
+	"gcc",
+	[[<cmd><Plug>VSCodeCommentaryLine<CR>]],
+	{ noremap = true, silent = true }
+)

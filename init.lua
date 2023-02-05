@@ -7,32 +7,17 @@ require("settings")
 
 if vim.g.vscode then
 	require("vscode.keymap")
+	vim.cmd([[
+	  highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+	  highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+	]])
 else
-	require("keymap")
 	require("packer-conf")
+	require("keymap")
 	require("custom-theme")
 
 	require("plugins.neovide")
-	require("plugins.nvim-notify")
-
-    require("plugins.alpha")
-
-	require("plugins.lualine")
-	require("plugins.bufferline")
-	require("plugins.Comment")
-	require("plugins.todo-comments")
-	require("plugins.dressing")
-	require("plugins.indent-blankline")
-	require("plugins.neoformat")
-	require("plugins.nvim-tree")
-	require("plugins.nvim-treesitter")
-	require("plugins.pretty-fold")
-	require("plugins.spellsitter")
-	require("plugins.symbols-outline")
-	require("plugins.telescope")
-	require("plugins.trouble")
 	require("plugins.vim-fugitive")
-	require("plugins.which-key")
 
 	require("lsp")
 end
@@ -44,3 +29,4 @@ vim.cmd([[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]])
+
