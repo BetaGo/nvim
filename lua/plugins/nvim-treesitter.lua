@@ -2,9 +2,9 @@
 -- Parsers must be installed manually via :TSInstall
 require("nvim-treesitter.configs").setup({
 	highlight = {
-		enable = true, -- false will disable the whole extension
+		enable = (not vim.g.vscode), -- false will disable the whole extension
 	},
- 	context_commentstring = {
+	context_commentstring = {
 		enable = true,
 	},
 	incremental_selection = {
@@ -57,5 +57,3 @@ require("nvim-treesitter.configs").setup({
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
-
-

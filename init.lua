@@ -4,7 +4,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("settings")
-
+require("packer-conf")
 if vim.g.vscode then
 	require("vscode.keymap")
 	vim.cmd([[
@@ -12,13 +12,9 @@ if vim.g.vscode then
 	  highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 	]])
 else
-	require("packer-conf")
 	require("keymap")
-	require("custom-theme")
-
 	require("plugins.neovide")
 	require("plugins.vim-fugitive")
-
 	require("lsp")
 end
 
@@ -29,4 +25,3 @@ vim.cmd([[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]])
-

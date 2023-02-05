@@ -179,24 +179,24 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"x",
 	"gc",
-	[[<cmd><Plug>VSCodeCommentary<CR>]],
+	[[<Plug>VSCodeCommentary]],
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
 	"n",
 	"gc",
-	[[<cmd><Plug>VSCodeCommentary<CR>]],
+	[[<Plug>VSCodeCommentary]],
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
 	"o",
 	"gc",
-	[[<cmd><Plug>VSCodeCommentary<CR>]],
+	[[<Plug>VSCodeCommentary]],
 	{ noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
 	"n",
 	"gcc",
-	[[<cmd><Plug>VSCodeCommentaryLine<CR>]],
+	[[<Plug>VSCodeCommentaryLine]],
 	{ noremap = true, silent = true }
 )
