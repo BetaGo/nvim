@@ -37,14 +37,14 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local luaConf = require("lsp.languages.sumneko_lua")
+local luaConf = require("lsp.languages.lua-ls")
 local enhance_server_opts = {
-	["sumneko_lua"] = luaConf.lsp_opts,
+	["lua_ls"] = luaConf.lsp_opts,
 }
 
 -- Enable the following language servers
 local servers = {
-	"sumneko_lua",
+	"lua_ls",
 	"rust_analyzer",
 	"pyright",
 	"tsserver",

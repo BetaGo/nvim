@@ -3,6 +3,7 @@
 require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = (not vim.g.vscode), -- false will disable the whole extension
+		-- enable = true,
 	},
 	context_commentstring = {
 		enable = true,
