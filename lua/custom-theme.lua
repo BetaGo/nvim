@@ -6,6 +6,6 @@ vim.o.termguicolors = true
 
 -- vim.g.nord_disable_background = true;
 
-vim.cmd([[colorscheme nord]])
+vim.cmd([[colorscheme edge]])
 
 

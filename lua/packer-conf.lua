@@ -32,7 +32,8 @@ require("packer").startup({
 			end,
 		})
 		use({
-			"shaunsingh/nord.nvim",
+			"sainnhe/edge",
+			-- "shaunsingh/nord.nvim",
 			-- "arcticicestudio/nord-vim",
 			config = function()
 				require("custom-theme")
@@ -165,6 +166,13 @@ require("packer").startup({
 			"unblevable/quick-scope",
 			config = function()
 				require("plugins.quick-scope")
+			end,
+		})
+		use({
+			"BetaGo/nvim-colorizer.lua",
+			cond = not_in_vscode,
+			config = function()
+				require("plugins.nvim-colorizer")
 			end,
 		})
 	end,
