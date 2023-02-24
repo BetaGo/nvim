@@ -5,6 +5,7 @@ vim.o.termguicolors = true
 -- vim.g.transparent_enabled = true;
 
 -- vim.g.nord_disable_background = true;
+vim.g.edge_transparent_background = 2;
 
 vim.cmd([[colorscheme edge]])
 

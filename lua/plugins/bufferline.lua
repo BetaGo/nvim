@@ -1,7 +1,7 @@
 require("bufferline").setup({
 	options = {
 		diagnostics = "nvim_lsp",
-		separator_style = "slant",
+		separator_style = "thin",
 		numbers = "ordinal",
 		diagnostics_indicator = function(count, level, diagnostics_dict, context)
 			local icon = level:match("error") and " " or " "
