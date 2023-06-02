@@ -25,3 +25,8 @@ vim.cmd([[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]])
+
+-- auto im-switch
+vim.cmd([[
+	autocmd InsertLeave * :silent !im-select com.apple.keylayout.ABC
+]])
