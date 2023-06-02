@@ -28,5 +28,17 @@ vim.cmd([[
 
 -- auto im-switch
 vim.cmd([[
-	autocmd InsertLeave * :silent !im-select com.apple.keylayout.ABC
+	function! RunImSwitch()
+		" Check if im-select command exists
+		if system('command -v im-select >/dev/null') == 0
+			silent !im-select com.apple.keylayout.ABC
+		endif
+		if system('command -v im-select >/dev/null') == 0
+			silent !macism com.apple.keylayout.ABC
+		endif
+	endfunction
+	augroup ImSwitch
+		autocmd!
+		autocmd InsertLeave * call RunImSwitch()
+	augroup END
 ]])
