@@ -51,6 +51,8 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
+vim.opt.termguicolors = true
+
 for key, value in pairs(settings) do
 	vim.opt[key] = value
 end

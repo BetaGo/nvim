@@ -2,7 +2,8 @@
 -- Parsers must be installed manually via :TSInstall
 require("nvim-treesitter.configs").setup({
 	highlight = {
-		enable = (not vim.g.vscode), -- false will disable the whole extension
+		-- enable = (not vim.g.vscode), -- false will disable the whole extension
+		enable = true,
 		-- enable = true,
 	},
 	context_commentstring = {

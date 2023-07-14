@@ -1,7 +1,5 @@
 require("lsp.nvim-lsp-installer")
 
-require("lsp.languages.shell")
-
 -- luasnip setup
 local luasnip = require("luasnip")
 -- nvim-cmp setup
@@ -47,3 +45,4 @@ cmp.setup({
 		{ name = "luasnip" },
 	},
 })
+

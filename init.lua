@@ -1,10 +1,6 @@
--- download config
-vim.g.download_plugin_use_ssh = false
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 require("settings")
-require("packer-conf")
+require("global-conf")
+require("lazy-conf")
 if vim.g.vscode then
 	require("vscode.keymap")
 	vim.cmd([[
@@ -13,8 +9,6 @@ if vim.g.vscode then
 	]])
 else
 	require("keymap")
-	require("plugins.neovide")
-	require("plugins.vim-fugitive")
 	require("lsp")
 end
 
@@ -33,7 +27,7 @@ vim.cmd([[
 		if system('command -v im-select >/dev/null') == 0
 			silent !im-select com.apple.keylayout.ABC
 		endif
-		if system('command -v im-select >/dev/null') == 0
+		if system('command -v macism >/dev/null') == 0
 			silent !macism com.apple.keylayout.ABC
 		endif
 	endfunction

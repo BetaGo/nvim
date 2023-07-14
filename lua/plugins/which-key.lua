@@ -12,8 +12,9 @@ wk.register({
 wk.register({
 	f = {
 		name = "file",
-		f = { "<cmd>Neoformat<cr>", "format current file" },
+		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "format current file" },
 		d = { "<cmd>DiffChangesDiffToggle<cr>", "show current file diff changes with saved" },
+		b = { "<cmd>Telescope file_browser<cr>", "show telescope file browser" },
 	},
 }, { prefix = "<leader>" })
 
