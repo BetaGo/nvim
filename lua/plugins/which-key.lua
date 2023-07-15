@@ -35,7 +35,22 @@ wk.register({
 		name = "git",
 		c = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "list git commits with diff preview" },
 		b = { "<cmd>lua require('telescope.builtin').git_branches()<cr>", "list all branches with log preview" },
-        g = { "<cmd>LazyGit<cr>", "show lazygit"}
+		g = { "<cmd>LazyGit<cr>", "show lazygit" },
 	},
 }, { prefix = "<leader>" })
 
+local chatgpt = require("chatgpt")
+wk.register({
+	p = {
+		name = "ChatGPT",
+		e = {
+			function()
+				chatgpt.edit_with_instructions()
+			end,
+			"Edit with instructions",
+		},
+	},
+}, {
+	prefix = "<leader>",
+	mode = "v",
+})

@@ -35,6 +35,17 @@ require("lazy").setup({
 		end,
 	},
 	{
+		"neanias/everforest-nvim",
+		cond = nocode,
+		version = false,
+		lazy = false,
+		priority = 1000, -- make sure to load this before all the other start plugins
+		-- Optional; default configuration will be used if setup isn't called.
+		config = function()
+			require("custom-theme")
+		end,
+	},
+	{
 		"lukas-reineke/indent-blankline.nvim",
 		cond = nocode,
 		config = function()
@@ -108,22 +119,16 @@ require("lazy").setup({
 			require("plugins.symbols-outline")
 		end,
 	},
-	{ "stevearc/dressing.nvim", cond = nocode },
+	-- { "stevearc/dressing.nvim", cond = nocode },
 	{
 		"folke/which-key.nvim",
 		cond = nocode,
+		event = "VeryLazy",
 		config = function()
 			require("plugins.which-key")
 		end,
 	},
 	{ "lambdalisue/suda.vim" },
-	-- {
-	-- 	"rcarriga/nvim-notify",
-	-- 	cond = nocode,
-	-- 	config = function()
-	-- 		require("plugins.nvim-notify")
-	-- 	end,
-	-- },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -139,6 +144,16 @@ require("lazy").setup({
 			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
 		},
+	},
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
 	},
 	{
 		"goolord/alpha-nvim",
@@ -188,5 +203,25 @@ require("lazy").setup({
 		config = function()
 			require("plugins.nvim-colorizer")
 		end,
+	},
+	{
+		"windwp/nvim-autopairs",
+		cond = nocode,
+		event = "InsertEnter",
+		config = function()
+			require("plugins.autopairs")
+		end,
+	},
+	{
+		"jackMort/ChatGPT.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.chatgpt")
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
 	},
 })

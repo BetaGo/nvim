@@ -36,3 +36,4 @@ vim.cmd([[
 		autocmd InsertLeave * call RunImSwitch()
 	augroup END
 ]])
+
