@@ -1,3 +1,4 @@
+-- dev
 require("settings")
 require("global-conf")
 require("lazy-conf")
@@ -36,4 +37,3 @@ vim.cmd([[
 		autocmd InsertLeave * call RunImSwitch()
 	augroup END
 ]])
-

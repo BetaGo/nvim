@@ -28,19 +28,17 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"sainnhe/edge",
+		"nvim-telescope/telescope-file-browser.nvim",
 		cond = nocode,
-		config = function()
-			require("custom-theme")
-		end,
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
+	{ "nvim-telescope/telescope-ui-select.nvim" },
 	{
-		"neanias/everforest-nvim",
+		"BetaGo/everforest-nvim",
 		cond = nocode,
-		version = false,
+		-- dev = true,
 		lazy = false,
 		priority = 1000, -- make sure to load this before all the other start plugins
-		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
 			require("custom-theme")
 		end,
@@ -65,8 +63,8 @@ require("lazy").setup({
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		cond = nocode,
 	},
-	{ "williamboman/mason-lspconfig.nvim",           cond = nocode },
-	{ "neovim/nvim-lspconfig",                       cond = nocode },
+	{ "williamboman/mason-lspconfig.nvim", cond = nocode },
+	{ "neovim/nvim-lspconfig",             cond = nocode },
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		cond = nocode,
@@ -89,27 +87,34 @@ require("lazy").setup({
 			require("plugins.neodev")
 		end,
 	},
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		cond = nocode,
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	},
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "kyazdani42/nvim-web-devicons",
-		cond = nocode,
-		config = function()
-			require("plugins.bufferline")
-		end,
-	},
+
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	version = "*",
+	-- 	dependencies = "kyazdani42/nvim-web-devicons",
+	-- 	cond = nocode,
+	-- 	config = function()
+	-- 		require("plugins.bufferline")
+	-- 	end,
+	-- },
 	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim", cond = nocode },
 	{ "kassio/neoterm",         cond = nocode },
 	{
 		"nvim-lualine/lualine.nvim",
 		cond = nocode,
+		-- lazy = true,
 		config = function()
 			require("plugins.lualine")
+		end,
+	},
+	{
+		"kdheepak/tabline.nvim",
+		dependencies = {
+			"nvim-lualine/lualine.nvim",
+			"kyazdani42/nvim-web-devicons",
+		},
+		config = function()
+			require("plugins.tabline")
 		end,
 	},
 	{
@@ -223,5 +228,13 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
+	},
+}, {
+	dev = {
+		-- directory where you store your local plugin projects
+		path = "~/workspace",
+		---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
+		patterns = {}, -- For example {"folke"}
+		fallback = false, -- Fallback to git when local plugin doesn't exist
 	},
 })

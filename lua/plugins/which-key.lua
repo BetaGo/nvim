@@ -2,6 +2,10 @@ local wk = require("which-key")
 wk.setup({})
 
 wk.register({
+	["<leader><leader>"] = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "show buffers" },
+})
+
+wk.register({
 	c = {
 		name = "code",
 		l = { "<cmd>SymbolsOutline<cr>", "Show SymbolsOutline" },
@@ -15,6 +19,10 @@ wk.register({
 		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "format current file" },
 		d = { "<cmd>DiffChangesDiffToggle<cr>", "show current file diff changes with saved" },
 		b = { "<cmd>Telescope file_browser<cr>", "show telescope file browser" },
+		c = {
+			"<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
+			"open file browser with the path of the current buffer",
+		},
 	},
 }, { prefix = "<leader>" })
 
@@ -39,6 +47,7 @@ wk.register({
 	},
 }, { prefix = "<leader>" })
 
+-- only in v mode
 local chatgpt = require("chatgpt")
 wk.register({
 	p = {
@@ -53,4 +62,11 @@ wk.register({
 }, {
 	prefix = "<leader>",
 	mode = "v",
+})
+
+-- only in t mode
+wk.register({
+	["<Esc><Esc>"] = { "<C-\\><C-n>", "exit form terminal input mode" },
+}, {
+	mode = "t",
 })
