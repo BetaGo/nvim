@@ -22,9 +22,9 @@ require("lualine").setup({
     lualine_a = { "mode" },
     lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = { "filename" },
-    lualine_x = { "encoding", "fileformat", "filetype" },
+    lualine_x = { "encoding", "hostname", "filetype" },
     lualine_y = { "progress" },
-    lualine_z = { "location" },
+    lualine_z = { "location", "selectioncount" },
   },
   inactive_sections = {
     lualine_a = {},
