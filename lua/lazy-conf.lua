@@ -87,16 +87,6 @@ require("lazy").setup({
 			require("plugins.neodev")
 		end,
 	},
-
-	-- {
-	-- 	"akinsho/bufferline.nvim",
-	-- 	version = "*",
-	-- 	dependencies = "kyazdani42/nvim-web-devicons",
-	-- 	cond = nocode,
-	-- 	config = function()
-	-- 		require("plugins.bufferline")
-	-- 	end,
-	-- },
 	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim", cond = nocode },
 	{ "kassio/neoterm",         cond = nocode },
 	{
@@ -220,6 +210,7 @@ require("lazy").setup({
 	{
 		"jackMort/ChatGPT.nvim",
 		event = "VeryLazy",
+		cond = nocode,
 		config = function()
 			require("plugins.chatgpt")
 		end,
