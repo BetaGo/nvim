@@ -92,13 +92,13 @@ require("lazy").setup({
 	{
 		"nvim-lualine/lualine.nvim",
 		cond = nocode,
-		-- lazy = true,
 		config = function()
 			require("plugins.lualine")
 		end,
 	},
 	{
 		"kdheepak/tabline.nvim",
+		cond = nocode,
 		dependencies = {
 			"nvim-lualine/lualine.nvim",
 			"kyazdani42/nvim-web-devicons",
@@ -209,6 +209,7 @@ require("lazy").setup({
 	},
 	{
 		"jackMort/ChatGPT.nvim",
+		cond = nocode,
 		event = "VeryLazy",
 		cond = nocode,
 		config = function()
