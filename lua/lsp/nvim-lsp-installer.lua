@@ -42,7 +42,7 @@ local on_attach = function(_, bufnr)
 		bufnr,
 		"n",
 		"<leader>q",
-		"<cmd>lua require('telescope.builtin').diagnostic({bufnr=0})<CR>",
+		"<cmd>lua require('telescope.builtin').diagnostics({bufnr=0})<CR>",
 		opts
 	)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
