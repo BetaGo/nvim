@@ -72,11 +72,20 @@ require("lazy").setup({
 			require("plugins.null-ls")
 		end,
 	},
-	{ "hrsh7th/cmp-nvim-lsp",     cond = nocode },
-	{ "hrsh7th/cmp-buffer",       cond = nocode },
-	{ "hrsh7th/cmp-path",         cond = nocode },
-	{ "hrsh7th/cmp-cmdline",      cond = nocode },
-	{ "hrsh7th/nvim-cmp",         cond = nocode },
+	{ "hrsh7th/cmp-nvim-lsp", cond = nocode },
+	{ "hrsh7th/cmp-buffer",   cond = nocode },
+	{ "hrsh7th/cmp-path",     cond = nocode },
+	{ "hrsh7th/cmp-calc",     cond = nocode },
+	{ "hrsh7th/cmp-emoji",    cond = nocode },
+	{ "ray-x/cmp-treesitter", cond = nocode },
+	{
+		"hrsh7th/nvim-cmp",
+		cond = nocode,
+
+		config = function()
+			require("plugins.nvim-cmp")
+		end,
+	},
 	{ "saadparwaiz1/cmp_luasnip", cond = nocode },
 	{ "L3MON4D3/LuaSnip",         cond = nocode },
 	{ "rcarriga/nvim-dap-ui",     cond = nocode, dependencies = { "mfussenegger/nvim-dap" } },
@@ -209,7 +218,6 @@ require("lazy").setup({
 	},
 	{
 		"jackMort/ChatGPT.nvim",
-		cond = nocode,
 		event = "VeryLazy",
 		cond = nocode,
 		config = function()
@@ -220,6 +228,10 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
+	},
+	{
+		"onsails/lspkind.nvim",
+		cond = nocode,
 	},
 }, {
 	dev = {
