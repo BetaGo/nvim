@@ -20,7 +20,7 @@ cmp.setup({
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-e>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
+            -- behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -42,18 +42,13 @@ cmp.setup({
             end
         end, { "i", "s" }),
     },
-    -- sources = cmp.config.sources({
-    --     { name = "nvim_lsp" },
-    --     {
-    --         { name = "path" },
-    --         { name = "luasnip" },
-    --         { name = "buffer" },
-    --         { name = "cmdline" },
-    --         { name = "nvim_lsp_signature_help" },
-    --     },
-    -- }),
     sources = {
-        { name = "nvim_lsp" },
+        {
+            name = "nvim_lsp",
+            entry_filter = function(entry)
+                return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+            end,
+        },
         { name = "path" },
         { name = "luasnip" },
         { name = "buffer" },

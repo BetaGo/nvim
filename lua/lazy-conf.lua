@@ -87,7 +87,16 @@ require("lazy").setup({
 		end,
 	},
 	{ "saadparwaiz1/cmp_luasnip", cond = nocode },
-	{ "L3MON4D3/LuaSnip",         cond = nocode },
+	{
+		"L3MON4D3/LuaSnip",
+		cond = nocode,
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "2.*",
+		build = "make install_jsregexp",
+		config = function()
+			require("plugins.luasnip")
+		end,
+	},
 	{ "rcarriga/nvim-dap-ui",     cond = nocode, dependencies = { "mfussenegger/nvim-dap" } },
 	{
 		"folke/neodev.nvim",
