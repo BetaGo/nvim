@@ -19,10 +19,29 @@ require("lualine").setup({
     },
   },
   sections = {
-    lualine_a = { "mode" },
+    lualine_a = {
+      {
+        "fileformat",
+        symbols = {
+          unix = "", -- e712
+          dos = "", -- e70f
+          mac = "", -- e711
+        },
+      },
+      "mode",
+    },
     lualine_b = { "branch", "diff", "diagnostics" },
     lualine_c = { "filename" },
-    lualine_x = { "encoding", "hostname", "filetype" },
+    lualine_x = {
+      {
+        require("noice").api.status.command.get,
+        cond = require("noice").api.status.command.has,
+        -- color = { fg = "#ff9e64" },
+      },
+      "encoding",
+      "hostname",
+      "filetype",
+    },
     lualine_y = { "progress" },
     lualine_z = { "location", "selectioncount" },
   },
