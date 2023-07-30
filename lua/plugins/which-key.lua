@@ -1,7 +1,7 @@
 local wk = require("which-key")
 wk.setup({
 	window = {
-		border = "single",    -- none, single, double, shadow
+		border = "single",  -- none, single, double, shadow
 		position = "bottom", -- bottom, top
 		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
 		padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
@@ -21,6 +21,7 @@ vim.api.nvim_set_hl(0, "WhichKeyBorder", { bg = "NONE" })
 wk.register({
 	["<leader><leader>"] = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "show buffers" },
 })
+
 
 wk.register({
 	c = {

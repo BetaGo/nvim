@@ -72,12 +72,12 @@ require("lazy").setup({
 			require("plugins.null-ls")
 		end,
 	},
-	{ "hrsh7th/cmp-nvim-lsp", cond = nocode },
-	{ "hrsh7th/cmp-buffer",   cond = nocode },
-	{ "hrsh7th/cmp-path",     cond = nocode },
-	{ "hrsh7th/cmp-calc",     cond = nocode },
-	{ "hrsh7th/cmp-emoji",    cond = nocode },
-	{ "ray-x/cmp-treesitter", cond = nocode },
+	{ "hrsh7th/cmp-nvim-lsp",                cond = nocode },
+	{ "hrsh7th/cmp-buffer",                  cond = nocode },
+	{ "hrsh7th/cmp-path",                    cond = nocode },
+	{ "hrsh7th/cmp-calc",                    cond = nocode },
+	{ "hrsh7th/cmp-emoji",                   cond = nocode },
+	{ "ray-x/cmp-treesitter",                cond = nocode },
 	{
 		"hrsh7th/nvim-cmp",
 		cond = nocode,
@@ -242,6 +242,13 @@ require("lazy").setup({
 		"onsails/lspkind.nvim",
 		cond = nocode,
 	},
+	-- {
+	-- 	"lewis6991/hover.nvim",
+	-- 	cond = nocode,
+	-- 	config = function ()
+	-- 		require("plugins.hover")
+	-- 	end
+	-- },
 }, {
 	dev = {
 		-- directory where you store your local plugin projects

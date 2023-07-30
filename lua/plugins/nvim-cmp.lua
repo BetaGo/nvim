@@ -55,7 +55,6 @@ cmp.setup({
         { name = "calc" },
         { name = "emoji" },
         { name = "treesitter" },
-        { name = "nvim_lsp_signature_help" },
     },
 
     formatting = {
