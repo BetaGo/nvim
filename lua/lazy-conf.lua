@@ -33,6 +33,7 @@ require("lazy").setup({
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
 	{ "nvim-telescope/telescope-ui-select.nvim" },
+	{ "princejoogie/dir-telescope.nvim" },
 	{
 		"BetaGo/everforest-nvim",
 		cond = nocode,
@@ -63,8 +64,8 @@ require("lazy").setup({
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		cond = nocode,
 	},
-	{ "williamboman/mason-lspconfig.nvim", cond = nocode },
-	{ "neovim/nvim-lspconfig",             cond = nocode },
+	{ "williamboman/mason-lspconfig.nvim",           cond = nocode },
+	{ "neovim/nvim-lspconfig",                       cond = nocode },
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		cond = nocode,

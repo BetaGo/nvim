@@ -22,7 +22,6 @@ wk.register({
 	["<leader><leader>"] = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "show buffers" },
 })
 
-
 wk.register({
 	c = {
 		name = "code",
@@ -52,6 +51,10 @@ wk.register({
 		s = {
 			"<cmd>lua require('telescope.builtin').live_grep()<cr>",
 			"search for a string in current working directory",
+		},
+		d = {
+			"<cmd>Telescope dir live_grep<CR>",
+			"live grep in spaecial dir",
 		},
 	},
 }, { prefix = "<leader>" })

@@ -1,6 +1,13 @@
 local actions = require("telescope.actions")
 local previewers = require("telescope.previewers")
 
+require("dir-telescope").setup({
+	-- these are the default options set
+	hidden = true,
+	no_ignore = false,
+	show_preview = true,
+})
+
 local new_maker = function(filepath, bufnr, opts)
 	opts = opts or {}
 
@@ -20,6 +27,14 @@ end
 -- Telescope
 require("telescope").setup({
 	defaults = {
+		file_ignore_patterns = {
+			"node_modules/",
+			".git/",
+			"dist/",
+			"build/",
+			"yarn.lock",
+			"package-lock.json",
+		},
 		buffer_previewer_maker = new_maker, -- Ignore files bigger than a threshold
 		mappings = {
 			i = {
@@ -123,3 +138,4 @@ require("telescope").setup({
 require("telescope").load_extension("file_browser")
 require("telescope").load_extension("ui-select")
 require("telescope").load_extension("noice")
+require("telescope").load_extension("dir")
