@@ -11,6 +11,7 @@
 --
 require("everforest").setup({
     background = "medium",
-    transparent_background_level = 2,
+    transparent_background_level = 0,
 })
 vim.cmd([[colorscheme everforest]])
+-- require('onenord').setup()

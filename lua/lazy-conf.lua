@@ -15,6 +15,10 @@ local nocode = function()
 	return vim.fn.exists("g:vscode") == 0
 end
 
+local incode = function()
+	return vim.fn.exists("g:vscode") ~= 0
+end
+
 require("lazy").setup({
 	{ "kdheepak/lazygit.nvim",                       cond = nocode },
 	{ "tpope/vim-commentary",                        cond = nocode },
@@ -36,6 +40,7 @@ require("lazy").setup({
 	{ "princejoogie/dir-telescope.nvim" },
 	{
 		"BetaGo/everforest-nvim",
+		-- "rmehri01/onenord.nvim",
 		cond = nocode,
 		-- dev = true,
 		lazy = false,
@@ -209,6 +214,7 @@ require("lazy").setup({
 	},
 	{
 		"unblevable/quick-scope",
+		cond = incode,
 	},
 	{
 		"BetaGo/nvim-colorizer.lua",
@@ -241,6 +247,38 @@ require("lazy").setup({
 	{
 		"onsails/lspkind.nvim",
 		cond = nocode,
+	},
+	{
+		"folke/flash.nvim",
+		cond = nocode,
+		event = "VeryLazy",
+		---@type Flash.Config
+		opts = {},
+		-- stylua: ignore
+		keys = {
+			{ "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+			{
+				"S",
+				mode = { "n", "o", "x" },
+				function() require("flash").treesitter() end,
+				desc =
+				"Flash Treesitter"
+			},
+						{
+				"R",
+				mode = { "o", "x" },
+				function() require("flash").treesitter_search() end,
+				desc =
+				"Treesitter Search"
+			},
+			{
+				"<c-s>",
+				mode = { "c" },
+				function() require("flash").toggle() end,
+				desc =
+				"Toggle Flash Search"
+			},
+		},
 	},
 }, {
 	dev = {
