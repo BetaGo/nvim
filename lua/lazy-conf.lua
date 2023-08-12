@@ -72,11 +72,10 @@ require("lazy").setup({
 	{ "williamboman/mason-lspconfig.nvim",           cond = nocode },
 	{ "neovim/nvim-lspconfig",                       cond = nocode },
 	{
-		"jose-elias-alvarez/null-ls.nvim",
-		cond = nocode,
+		"sbdchd/neoformat",
 		config = function()
-			require("plugins.null-ls")
-		end,
+			require("plugins.neoformat")
+		end
 	},
 	{ "hrsh7th/cmp-nvim-lsp", cond = nocode },
 	{ "hrsh7th/cmp-buffer",   cond = nocode },
@@ -183,13 +182,6 @@ require("lazy").setup({
 	},
 	{ "jmcantrell/vim-diffchanges", cond = nocode },
 	{
-		"anuvyklack/pretty-fold.nvim",
-		cond = nocode,
-		config = function()
-			require("plugins.pretty-fold")
-		end,
-	},
-	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
 		cond = nocode,
@@ -232,19 +224,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"jackMort/ChatGPT.nvim",
-		event = "VeryLazy",
-		cond = nocode,
-		config = function()
-			require("plugins.chatgpt")
-		end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	},
-	{
 		"onsails/lspkind.nvim",
 		cond = nocode,
 	},
@@ -264,7 +243,7 @@ require("lazy").setup({
 				desc =
 				"Flash Treesitter"
 			},
-						{
+			{
 				"R",
 				mode = { "o", "x" },
 				function() require("flash").treesitter_search() end,

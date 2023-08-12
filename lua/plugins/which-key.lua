@@ -1,7 +1,8 @@
 local wk = require("which-key")
 wk.setup({
 	window = {
-		border = "single",  -- none, single, double, shadow
+		-- border = "single",  -- none, single, double, shadow
+		border = "none",    -- none, single, double, shadow
 		position = "bottom", -- bottom, top
 		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
 		padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
@@ -15,8 +16,8 @@ wk.setup({
 		align = "left",           -- align columns left, center or right
 	},
 })
-vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "NONE", fg = "NONE" })
-vim.api.nvim_set_hl(0, "WhichKeyBorder", { bg = "NONE" })
+-- vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "NONE", fg = "NONE" })
+-- vim.api.nvim_set_hl(0, "WhichKeyBorder", { bg = "NONE" })
 
 wk.register({
 	["<leader><leader>"] = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "show buffers" },
@@ -33,7 +34,7 @@ wk.register({
 wk.register({
 	f = {
 		name = "file",
-		f = { "<cmd>lua vim.lsp.buf.format()<cr>", "format current file" },
+		f = { "<cmd>lua require('plugins.neoformat').format()<cr>", "format current file" },
 		d = { "<cmd>DiffChangesDiffToggle<cr>", "show current file diff changes with saved" },
 		b = { "<cmd>Telescope file_browser<cr>", "show telescope file browser" },
 		c = {
@@ -67,23 +68,6 @@ wk.register({
 		g = { "<cmd>LazyGit<cr>", "show lazygit" },
 	},
 }, { prefix = "<leader>" })
-
--- only in v mode
-local chatgpt = require("chatgpt")
-wk.register({
-	p = {
-		name = "ChatGPT",
-		e = {
-			function()
-				chatgpt.edit_with_instructions()
-			end,
-			"Edit with instructions",
-		},
-	},
-}, {
-	prefix = "<leader>",
-	mode = "v",
-})
 
 -- only in t mode
 wk.register({

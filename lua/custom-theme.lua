@@ -10,7 +10,7 @@
 -- vim.cmd([[colorscheme edge]])
 --
 require("everforest").setup({
-    background = "medium",
+    background = "hard",
     transparent_background_level = 0,
 })
 vim.cmd([[colorscheme everforest]])
