@@ -80,8 +80,8 @@ cmp.setup({
             if vim.tbl_contains({ "path" }, entry.source.name) then
                 local icon, hl_group = devicons.get_icon(entry:get_completion_item().label)
                 if icon then
-                    vim_item.kind = icon
-                    vim_item.kind_hl_group = hl_group
+                    vim_item.kind =" " .. icon .. " "
+                    vim_item.kind_hl_group = "CmpItemKindFile"
                     vim_item.menu = "    (File)"
                     return vim_item
                 end
