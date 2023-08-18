@@ -2,6 +2,7 @@
 require("settings")
 require("global-conf")
 require("lazy-conf")
+require("filetype-detect")
 if vim.g.vscode then
 	require("vscode.keymap")
 	vim.cmd([[
