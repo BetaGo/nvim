@@ -259,6 +259,7 @@ require("lazy").setup({
 			},
 		},
 	},
+	{ 'ojroques/nvim-osc52' }
 }, {
 	dev = {
 		-- directory where you store your local plugin projects
