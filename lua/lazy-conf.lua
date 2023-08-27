@@ -259,7 +259,19 @@ require("lazy").setup({
 			},
 		},
 	},
-	{ 'ojroques/nvim-osc52' }
+	{ 'ojroques/nvim-osc52' },
+	{
+		"jackMort/ChatGPT.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.chatgpt")
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim"
+		}
+	}
 }, {
 	dev = {
 		-- directory where you store your local plugin projects
