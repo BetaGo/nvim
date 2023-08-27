@@ -11,7 +11,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "diffview.nvim": { "branch": "main", "commit": "7e5a85c186027cab1e825d018f07c350177077fc" },
   "dir-telescope.nvim": { "branch": "main", "commit": "1f3a041f870d1edf9cc64635e79f4b829e755978" },
-  "everforest-nvim": { "branch": "main", "commit": "b9cd68d76160c655a74c1c6a99363c5f34741e4b" },
+  "everforest-nvim": { "branch": "main", "commit": "e71f972bb4477c9fefc18d578aa33ed9e760fa1b" },
   "flash.nvim": { "branch": "main", "commit": "967117690bd677cb7b6a87f0bc0077d2c0be3a27" },
   "friendly-snippets": { "branch": "main", "commit": "7ff46f90aad07a9be1eb9e2f24e5d7256ecc766b" },
   "guess-indent.nvim": { "branch": "main", "commit": "b8ae749fce17aa4c267eec80a6984130b94f80b2" },
