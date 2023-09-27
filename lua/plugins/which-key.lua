@@ -112,6 +112,7 @@ wk.register({
 		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 		x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
 		u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+		l = { "<cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<cr>", "List Breakpoints" },
 	},
 }, {
 	mode = "n",
