@@ -40,14 +40,12 @@ require("lazy").setup({
 	{ "princejoogie/dir-telescope.nvim" },
 	{
 		"BetaGo/everforest-nvim",
-		-- "rmehri01/onenord.nvim",
 		cond = nocode,
-		-- dev = true,
-		lazy = false,
-		priority = 1000, -- make sure to load this before all the other start plugins
+		priority = 1000,
 		config = function()
 			require("custom-theme")
-		end,
+		end
+
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -58,19 +56,21 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		cond = nocode,
+		-- cond = nocode,
 		config = function()
 			require("plugins.nvim-treesitter")
 		end,
 	},
-	{ "nvim-treesitter/nvim-treesitter-textobjects", cond = nocode },
+	{ "nvim-treesitter/nvim-treesitter-textobjects",
+		-- cond = nocode
+	},
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		cond = nocode,
 	},
-	{ "williamboman/mason-lspconfig.nvim",           cond = nocode },
-	{ "neovim/nvim-lspconfig",                       cond = nocode },
+	{ "williamboman/mason-lspconfig.nvim", cond = nocode },
+	{ "neovim/nvim-lspconfig",             cond = nocode },
 	{
 		"sbdchd/neoformat",
 		config = function()
@@ -102,7 +102,28 @@ require("lazy").setup({
 			require("plugins.luasnip")
 		end,
 	},
-	{ "rcarriga/nvim-dap-ui",     cond = nocode, dependencies = { "mfussenegger/nvim-dap" } },
+	{
+		"mfussenegger/nvim-dap",
+		cond = nocode,
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"theHamsta/nvim-dap-virtual-text",
+			"nvim-telescope/telescope-dap.nvim",
+			"mfussenegger/nvim-dap-python",
+			"jay-babu/mason-nvim-dap.nvim"
+		},
+		config = function()
+			require("plugins.nvim-dap")
+		end,
+	},
+	-- {
+	-- 	"mxsdev/nvim-dap-vscode-js",
+	-- 	cond = nocode,
+	-- 	dependencies = {
+	-- 		"mfussenegger/nvim-dap"
+	-- 	},
+	-- 	-- build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+	-- },
 	{
 		"folke/neodev.nvim",
 		cond = nocode,
@@ -110,8 +131,8 @@ require("lazy").setup({
 			require("plugins.neodev")
 		end,
 	},
-	{ "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim", cond = nocode },
-	{ "kassio/neoterm",         cond = nocode },
+	{ "sindrets/diffview.nvim",   dependencies = "nvim-lua/plenary.nvim", cond = nocode },
+	{ "kassio/neoterm",           cond = nocode },
 	{
 		"nvim-lualine/lualine.nvim",
 		cond = nocode,
@@ -229,7 +250,7 @@ require("lazy").setup({
 	},
 	{
 		"folke/flash.nvim",
-		cond = nocode,
+		-- cond = nocode,
 		event = "VeryLazy",
 		---@type Flash.Config
 		opts = {},
@@ -263,6 +284,7 @@ require("lazy").setup({
 	{
 		"jackMort/ChatGPT.nvim",
 		event = "VeryLazy",
+		cond = nocode,
 		config = function()
 			require("plugins.chatgpt")
 		end,
@@ -271,7 +293,25 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim"
 		}
+	},
+	{
+		'f-person/git-blame.nvim',
+		cond = nocode,
+		init = function()
+			vim.g.gitblame_enabled = 0
+		end
+	},
+	{
+		'glacambre/firenvim',
+
+		-- Lazy load firenvim
+		-- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+		lazy = not vim.g.started_by_firenvim,
+		build = function()
+			vim.fn["firenvim#install"](0)
+		end
 	}
+
 }, {
 	dev = {
 		-- directory where you store your local plugin projects

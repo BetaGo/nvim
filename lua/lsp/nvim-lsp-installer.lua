@@ -1,6 +1,9 @@
 -- LSP installer
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("mason-nvim-dap").setup({
+	ensure_installed = { "python", "js" }
+})
 
 -- LSP settings
 local on_attach = function(_, bufnr)

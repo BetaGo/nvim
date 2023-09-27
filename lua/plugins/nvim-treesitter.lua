@@ -1,11 +1,15 @@
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "lua", "vim", "vimdoc", "python", "html", "css", "typescript", "tsx", "javascript", "bash", "markdown",
+	ensure_installed = { "lua", "vim", "vimdoc", "python", "html", "css", "typescript", "tsx", "javascript", "bash",
+		"markdown",
 		"markdown_inline" },
 	highlight = {
 		enable = true,
 		disable = function(lang, buf)
+			if vim.g.vscode then
+				return true
+			end
 			local max_filesize = 500 * 1024 -- 500 KB
 			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
 			if ok and stats and stats.size > max_filesize then
