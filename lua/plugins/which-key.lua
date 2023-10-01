@@ -39,6 +39,8 @@ wk.register({
 		x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
 		r = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
 		l = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
+		p = { "<cmd>ChatGPTRun en2zh<CR>", "Translate English Paragraph to Chinese", mode = { "n", "v" } },
+		w = { "<cmd>ChatGPTRun trans_word<CR>", "Translate English word to Chinese", mode = { "n", "v" } },
 	},
 }, { prefix = "<leader>" })
 
