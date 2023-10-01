@@ -2,7 +2,7 @@
   "en2zh": {
     "type": "chat",
     "opts": {
-      "template": "<should-translate-text>{{input}}</should-translate-text>",
+      "template": "<shouldtranslatetag>{{input}}</shouldtranslatetag>",
       "strategy": "display",
       "title": "English to Chinese",
       "params": {
@@ -14,7 +14,7 @@
           },
           {
             "role": "user",
-            "content": "Translate from English to Chinese. Only the translated text can be returned. Only translate the text between <should-translate-text> and </should-translate-text>."
+            "content": "Translate from English to Chinese. Only translate the text between <shouldtranslatetag> and </shouldtranslatetag>. Only the translated text can be returned."
           }
         ]
       }
