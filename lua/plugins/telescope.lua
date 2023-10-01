@@ -24,6 +24,17 @@ local new_maker = function(filepath, bufnr, opts)
 	end)
 end
 
+
+local copy_selected_entry = function(prompt_bufnr)
+	local path = require("telescope.actions.state").get_selected_entry().value
+	require("telescope.actions").close(prompt_bufnr)
+	local clipboardOpt = vim.opt.clipboard:get()
+	local useSystemClipb = #clipboardOpt > 0 and clipboardOpt[1]:find("unnamed")
+	local reg = useSystemClipb and "+" or '"'
+	vim.fn.setreg(reg, path)
+	vim.notify("COPIED \n" .. path)
+end
+
 -- Telescope
 require("telescope").setup({
 	defaults = {
@@ -38,8 +49,11 @@ require("telescope").setup({
 			i = {
 				-- ["<C-u>"] = false,
 				-- ["<C-d>"] = false,
-				["<C-h>"] = "which_key",
+				["<C-y>"] = copy_selected_entry
 			},
+			n = {
+				["<C-y>"] = copy_selected_entry
+			}
 		},
 		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
@@ -93,6 +107,7 @@ require("telescope").setup({
 				},
 				n = {
 					["d"] = actions.delete_buffer,
+
 				},
 			},
 		},
@@ -105,9 +120,11 @@ require("telescope").setup({
 			mappings = {
 				["i"] = {
 					-- your custom insert mode mappings
+
 				},
 				["n"] = {
 					-- your custom normal mode mappings
+
 				},
 			},
 		},

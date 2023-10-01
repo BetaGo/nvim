@@ -8,6 +8,19 @@
 
 - https://github.com/jesseduffield/lazygit
 
+## install glow 
+
+render markdown in terminal
+
+- https://github.com/charmbracelet/glow
+
+
+## install ranger
+
+ A VIM-inspired filemanager for the console
+
+- https://github.com/ranger/ranger
+
 ## Windows wsl
 
 ### set clipboard
@@ -21,3 +34,4 @@
 
 - js,css,md
   https://prettier.io/docs/en/install.html
+

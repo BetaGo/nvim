@@ -47,7 +47,7 @@ wk.register({
 		name = "file",
 		f = { "<cmd>lua require('plugins.neoformat').format()<cr>", "format current file" },
 		d = { "<cmd>DiffChangesDiffToggle<cr>", "show current file diff changes with saved" },
-		b = { "<cmd>Telescope file_browser<cr>", "show telescope file browser" },
+		b = { "<cmd>RnvimrToggle<cr>", "show ranger file browser" },
 		c = {
 			"<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
 			"open file browser with the path of the current buffer",
@@ -57,8 +57,8 @@ wk.register({
 
 wk.register({
 	s = {
-		name = "search",
-		b = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "fuzzy search current file" },
+		name = "search file or docs",
+		c = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "fuzzy search current file" },
 		f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files, search files" },
 		s = {
 			"<cmd>lua require('telescope.builtin').live_grep()<cr>",
@@ -68,6 +68,15 @@ wk.register({
 			"<cmd>Telescope dir live_grep<CR>",
 			"live grep in spaecial dir",
 		},
+		k = {
+			"<cmd>DevdocsOpenCurrentFloat<CR>",
+			"Open documentation for the current filetype in a floating window",
+		},
+		w = {
+
+			"<cmd>DevdocsOpenFloat<CR>",
+			"Open documentation in a floating window",
+		}
 	},
 }, { prefix = "<leader>" })
 

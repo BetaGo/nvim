@@ -40,6 +40,7 @@ require("lazy").setup({
 	{ "princejoogie/dir-telescope.nvim" },
 	{
 		"BetaGo/everforest-nvim",
+		dev = true,
 		cond = nocode,
 		priority = 1000,
 		config = function()
@@ -50,6 +51,7 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		cond = nocode,
+		main = "ibl",
 		config = function()
 			require("plugins.indent-blankline")
 		end,
@@ -70,19 +72,22 @@ require("lazy").setup({
 		cond = nocode,
 	},
 	{ "williamboman/mason-lspconfig.nvim", cond = nocode },
-	{ "neovim/nvim-lspconfig",             cond = nocode },
+	{
+		"neovim/nvim-lspconfig",
+		cond = nocode,
+	},
 	{
 		"sbdchd/neoformat",
 		config = function()
 			require("plugins.neoformat")
 		end
 	},
-	{ "hrsh7th/cmp-nvim-lsp", cond = nocode },
-	{ "hrsh7th/cmp-buffer",   cond = nocode },
-	{ "hrsh7th/cmp-path",     cond = nocode },
-	{ "hrsh7th/cmp-calc",     cond = nocode },
-	{ "hrsh7th/cmp-emoji",    cond = nocode },
-	{ "ray-x/cmp-treesitter", cond = nocode },
+	{ "hrsh7th/cmp-nvim-lsp",              cond = nocode },
+	{ "hrsh7th/cmp-buffer",                cond = nocode },
+	{ "hrsh7th/cmp-path",                  cond = nocode },
+	{ "hrsh7th/cmp-calc",                  cond = nocode },
+	{ "hrsh7th/cmp-emoji",                 cond = nocode },
+	{ "ray-x/cmp-treesitter",              cond = nocode },
 	{
 		"hrsh7th/nvim-cmp",
 		cond = nocode,
@@ -302,16 +307,21 @@ require("lazy").setup({
 		end
 	},
 	{
-		'glacambre/firenvim',
-
-		-- Lazy load firenvim
-		-- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-		lazy = not vim.g.started_by_firenvim,
-		build = function()
-			vim.fn["firenvim#install"](0)
+		'kevinhwang91/rnvimr',
+		cond = nocode,
+		event = "VeryLazy",
+		config = function()
+			require("plugins.rnvimr")
+		end
+	},
+	{
+		"luckasRanarison/nvim-devdocs",
+		cond = nocode,
+		event = "VeryLazy",
+		config = function()
+			require("plugins.nvim-devdocs")
 		end
 	}
-
 }, {
 	dev = {
 		-- directory where you store your local plugin projects
