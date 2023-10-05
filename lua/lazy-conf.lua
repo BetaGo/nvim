@@ -121,14 +121,6 @@ require("lazy").setup({
 			require("plugins.nvim-dap")
 		end,
 	},
-	-- {
-	-- 	"mxsdev/nvim-dap-vscode-js",
-	-- 	cond = nocode,
-	-- 	dependencies = {
-	-- 		"mfussenegger/nvim-dap"
-	-- 	},
-	-- 	-- build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-	-- },
 	{
 		"folke/neodev.nvim",
 		cond = nocode,
@@ -154,13 +146,6 @@ require("lazy").setup({
 		},
 		config = function()
 			require("plugins.tabline")
-		end,
-	},
-	{
-		"simrat39/symbols-outline.nvim",
-		cond = nocode,
-		config = function()
-			require("plugins.symbols-outline")
 		end,
 	},
 	{
@@ -222,17 +207,6 @@ require("lazy").setup({
 		config = function()
 			require("plugins.trouble")
 		end,
-	},
-	{
-		"nmac427/guess-indent.nvim",
-		cond = nocode,
-		config = function()
-			require("plugins.guess-indent")
-		end,
-	},
-	{
-		"unblevable/quick-scope",
-		cond = incode,
 	},
 	{
 		"BetaGo/nvim-colorizer.lua",
@@ -339,6 +313,10 @@ require("lazy").setup({
 	{
 		"goerz/jupytext.vim",
 		-- lazy = true,
+		cond = nocode
+	},
+	{
+		'jghauser/follow-md-links.nvim',
 		cond = nocode
 	}
 }, {

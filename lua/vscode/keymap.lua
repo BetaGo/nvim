@@ -86,19 +86,6 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>cl",
-	[[<cmd>call VSCodeNotify('workbench.action.showAllSymbols')<CR>]],
-	{ noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-	"x",
-	"<leader>cl",
-	[[<cmd>call VSCodeNotify('workbench.action.showAllSymbols')<CR>]],
-	{ noremap = true, silent = true }
-)
-
-vim.api.nvim_set_keymap(
-	"n",
 	"<leader>ca",
 	[[<cmd>call VSCodeNotify('editor.action.quickFix')<CR>]],
 	{ noremap = true, silent = true }
