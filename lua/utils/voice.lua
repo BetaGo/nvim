@@ -1,3 +1,4 @@
+local Utils = require("chatgpt.utils")
 local M = {}
 
 
@@ -17,7 +18,12 @@ end
 
 
 M.say_visual_selection = function()
-    local s = M.get_visual_selection()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local lines, start_row, start_col, end_row, end_col = Utils.get_visual_lines(bufnr)
+
+    local s = table.concat(lines, "\n")
+
+    -- local s = M.get_visual_selection()
     local ok, is_exe = pcall(vim.fn.executable, 'say')
     if ok then
         -- vim.fn.execute(table.concat(obj, ' '))

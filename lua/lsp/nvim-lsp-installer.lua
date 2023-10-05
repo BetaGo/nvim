@@ -65,6 +65,7 @@ local servers = {
 	"lua_ls",
 	"rust_analyzer",
 	"pyright",
+	"pylsp",
 	"tsserver",
 	"yamlls",
 	"bashls",
@@ -74,6 +75,7 @@ local servers = {
 	"cssls",
 	"clangd",
 	"svelte",
+	"jsonls"
 }
 
 for _, lsp in pairs(servers) do

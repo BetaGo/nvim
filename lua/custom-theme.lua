@@ -15,6 +15,7 @@ require("everforest").setup({
 
 vim.cmd([[colorscheme everforest]])
 
+
 -- overrite colorschema
 local custom_hl = {
     CmpItemMenu = { fg = palette.purple, bg = "NONE", italic = true },

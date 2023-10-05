@@ -98,6 +98,12 @@ wk.register({
 	mode = "t",
 })
 
+wk.register({
+	["s"] = { "<cmd>Say<cr>", "Say selected text" },
+}, {
+	mode = "v",
+	prefix = "<leader>"
+})
 
 -- for nvim dap
 wk.register({

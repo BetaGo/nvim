@@ -40,7 +40,7 @@ require("lazy").setup({
 	{ "princejoogie/dir-telescope.nvim" },
 	{
 		"BetaGo/everforest-nvim",
-		dev = true,
+		-- dev = true,
 		cond = nocode,
 		priority = 1000,
 		config = function()
@@ -321,11 +321,30 @@ require("lazy").setup({
 		config = function()
 			require("plugins.nvim-devdocs")
 		end
+	},
+	{
+		"epwalsh/obsidian.nvim",
+		lazy = true,
+		event = {
+			"BufReadPre " .. require("user-conf").obsidian_valut_path .. "/**.md",
+			"BufNewFile " .. require("user-conf").obsidian_valut_path .. "/**.md",
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		opts = {
+			dir = require("user-conf").ojroques
+		},
+	},
+	{
+		"goerz/jupytext.vim",
+		-- lazy = true,
+		cond = nocode
 	}
 }, {
 	dev = {
 		-- directory where you store your local plugin projects
-		path = "~/workspace",
+		path = require("user-conf").workspace_path,
 		---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
 		patterns = {}, -- For example {"folke"}
 		fallback = false, -- Fallback to git when local plugin doesn't exist
