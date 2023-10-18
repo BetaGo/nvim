@@ -8,12 +8,13 @@ if config.transparent_background_level == 2 then
 end
 
 --
-require("everforest").setup({
-    background = "hard",
-    transparent_background_level = 0,
-})
+-- require("everforest").setup({
+--     background = "hard",
+--     transparent_background_level = 0,
+-- })
 
-vim.cmd([[colorscheme everforest]])
+-- vim.cmd([[colorscheme everforest]])
+vim.cmd('colorscheme github_light')
 
 
 -- overrite colorschema
@@ -50,6 +51,6 @@ local custom_hl = {
     Pmenu = { bg = "NONE", fg = "NONE" },
 }
 
-for group, highlights in pairs(custom_hl) do
-    mod_hl(group, highlights)
-end
+-- for group, highlights in pairs(custom_hl) do
+--     mod_hl(group, highlights)
+-- end

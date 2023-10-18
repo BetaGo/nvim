@@ -38,6 +38,7 @@ require("lazy").setup({
     },
     { "nvim-telescope/telescope-ui-select.nvim" },
     { "princejoogie/dir-telescope.nvim" },
+    { 'projekt0n/github-nvim-theme' },
     {
         "BetaGo/everforest-nvim",
         -- dev = true,
@@ -318,6 +319,14 @@ require("lazy").setup({
     {
         'jghauser/follow-md-links.nvim',
         cond = nocode
+    },
+    {
+        'mfussenegger/nvim-lint',
+        lazy = true,
+        cond = nocode,
+        config = function()
+            require("plugins.nvim-lint")
+        end
     }
 }, {
     dev = {
