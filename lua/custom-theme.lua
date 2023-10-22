@@ -16,7 +16,6 @@ end
 -- vim.cmd([[colorscheme everforest]])
 vim.cmd('colorscheme github_light')
 
-
 -- overrite colorschema
 local custom_hl = {
     CmpItemMenu = { fg = palette.purple, bg = "NONE", italic = true },

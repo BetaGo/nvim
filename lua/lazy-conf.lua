@@ -21,7 +21,14 @@ end
 
 require("lazy").setup({
     { "kdheepak/lazygit.nvim",                       cond = nocode },
-    { "tpope/vim-commentary",                        cond = nocode },
+    {
+        cond = nocode,
+        'numToStr/Comment.nvim',
+        config = function()
+            require("plugins.comment")
+        end,
+        lazy = false,
+    },
     { "JoosepAlviste/nvim-ts-context-commentstring", cond = nocode },
     {
         "nvim-telescope/telescope.nvim",
@@ -277,9 +284,9 @@ require("lazy").setup({
     {
         'f-person/git-blame.nvim',
         cond = nocode,
-        init = function()
-            vim.g.gitblame_enabled = 0
-        end
+        opts = {
+            enabled = false
+        },
     },
     {
         'kevinhwang91/rnvimr',
@@ -319,6 +326,13 @@ require("lazy").setup({
     {
         'jghauser/follow-md-links.nvim',
         cond = nocode
+    },
+    { 'RRethy/vim-illuminate', cond = nocode }, -- automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
+    {
+        'ahmedkhalf/project.nvim',
+        config = function()
+            require("plugins.project")
+        end
     },
     {
         'mfussenegger/nvim-lint',
