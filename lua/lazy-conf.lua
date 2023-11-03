@@ -39,6 +39,11 @@ require("lazy").setup({
         end,
     },
     {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        cond = nocode,
+        build = 'make'
+    },
+    {
         "nvim-telescope/telescope-file-browser.nvim",
         cond = nocode,
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -85,9 +90,11 @@ require("lazy").setup({
         cond = nocode,
     },
     {
-        "sbdchd/neoformat",
+        'stevearc/conform.nvim', -- formatters
+        event = { "BufWritePre" },
+        cmd = { "ConformInfo" },
         config = function()
-            require("plugins.neoformat")
+            require("plugins.conform")
         end
     },
     { "hrsh7th/cmp-nvim-lsp",              cond = nocode },

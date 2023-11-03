@@ -6,15 +6,15 @@ require("filetype-detect")
 require("neovide")
 require("custom-command")
 if vim.g.vscode then
-	require("vscode.keymap")
-	require("vscode.config")
-	vim.cmd([[
+    require("vscode.keymap")
+    require("vscode.config")
+    vim.cmd([[
 	  highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
 	  highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 	]])
 else
-	require("keymap")
-	require("lsp")
+    require("keymap")
+    require("lsp")
 end
 
 -- Highlight on yank
