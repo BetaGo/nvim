@@ -1,25 +1,23 @@
 # Additional config
 
-## install rigrep
+## Install rigrep
 
 - https://github.com/BurntSushi/ripgrep#installation
 
-## install lazygit
+
+## Install sed
+
+`brew install gnu-sed`
+
+## Install lazygit
 
 - https://github.com/jesseduffield/lazygit
 
-## install glow 
+## Install glow 
 
 render markdown in terminal
 
 - https://github.com/charmbracelet/glow
-
-
-## install ranger
-
- A VIM-inspired filemanager for the console
-
-- https://github.com/ranger/ranger
 
 ## Windows wsl
 

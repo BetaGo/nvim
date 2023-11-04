@@ -112,6 +112,10 @@ wk.register({
 }, { prefix = "<leader>" })
 
 wk.register({
+	S = { '<cmd>lua require("spectre").toggle()<CR>', "Toggle Spectre, Search & replace text" },
+}, { prefix = "<leader>" })
+
+wk.register({
 	g = {
 		name = "git",
 		c = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "list git commits with diff preview" },

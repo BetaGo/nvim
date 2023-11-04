@@ -248,7 +248,6 @@ require("lazy").setup({
 			-- options
 		},
 	},
-
 	{
 		"simrat39/symbols-outline.nvim",
 		cond = nocode,
@@ -370,6 +369,8 @@ require("lazy").setup({
 			require("plugins.nvim-lint")
 		end,
 	},
+	{ "nvim-pack/nvim-spectre", cond = nocode }, -- search & replace text
+	{ "kevinhwang91/nvim-bqf", ft = "qf", cond = nocode },
 }, {
 	dev = {
 		-- directory where you store your local plugin projects
