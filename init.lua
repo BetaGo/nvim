@@ -2,19 +2,15 @@
 require("settings")
 require("global-conf")
 require("lazy-conf")
-require("filetype-detect")
 require("neovide")
 require("custom-command")
+
 if vim.g.vscode then
-    require("vscode.keymap")
-    require("vscode.config")
-    vim.cmd([[
-	  highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-	  highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
-	]])
+	require("vscode.keymap")
+	require("vscode.config")
 else
-    require("keymap")
-    require("lsp")
+	require("keymap")
+	require("lsp")
 end
 
 -- Highlight on yank
@@ -28,7 +24,7 @@ vim.cmd([[
 -- auto im-switch
 vim.cmd([[
 	function! RunImSwitch()
-		" Check if im-select command exists
+	 " Check if im-select command exists
 		if system('command -v im-select >/dev/null') == 0
 			silent !im-select com.apple.keylayout.ABC
 		endif
@@ -40,4 +36,13 @@ vim.cmd([[
 		autocmd!
 		autocmd InsertLeave * call RunImSwitch()
 	augroup END
+]])
+
+-- some special filetype
+vim.cmd([[
+    augroup CustomFileType
+    autocmd!
+        autocmd BufNewFile,BufRead *.lepus set filetype=javascript
+        autocmd BufNewFile,BufRead *.ttml set filetype=html
+    augroup END
 ]])

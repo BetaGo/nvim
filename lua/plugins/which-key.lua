@@ -63,7 +63,7 @@ wk.register({
         r = { "<cmd>Telescope lsp_references<cr>", "Lists LSP references for word under the cursor" },
         i = { "<cmd>Telescope lsp_incoming_calls<cr>", "Lists LSP incoming calls for word under the cursor" },
         o = { "<cmd>Telescope lsp_outgoing_calls<cr>", "Lists LSP outgoing calls for word under the cursor" },
-        l = { "<cmd>Telescope lsp_document_symbols<cr>", "Lists LSP document symbols in the current buffer" },
+        l = { "<cmd>SymbolsOutline<cr>", "Toggle symbols outline" },
         e = { "<cmd>Telescope diagnostics<cr>", "Lists Diagnostics for all open buffers" },
         d = { "<cmd>Telescope lsp_definitions<cr>",
             "Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope" },

@@ -1,31 +1,46 @@
 require("conform").setup({
-    formatters_by_ft = {
-        lua = { "stylua" },
-        -- Conform will run multiple formatters sequentially
-        python = { "isort", "black" },
-        -- Use a sub-list to run only the first available formatter
-        javascript = { { "prettierd", "prettier" } },
-        html = { { "prettierd", "prettier" } },
-        json = { { "prettierd", "prettier" } },
-        css = { { "prettierd", "prettier" } },
-        less = { { "prettierd", "prettier" } },
-        jsonc = { { "prettierd", "prettier" } },
-        markdown = { { "prettierd", "prettier" } },
-        svelte = { { "prettierd", "prettier" } },
-        typescript = { { "prettierd", "prettier" } },
-        typescriptreact = { { "prettierd", "prettier" } },
-        vue = { { "prettierd", "prettier" } },
-    },
+	formatters_by_ft = {
+		lua = { "stylua" },
+		-- Conform will run multiple formatters sequentially
+		python = { "isort", "black" },
+		-- Use a sub-list to run only the first available formatter
+		javascript = { { "prettier" } },
+		html = { { "prettier" } },
+		json = { { "prettier" } },
+		css = { { "prettier" } },
+		less = { { "prettier" } },
+		jsonc = { { "prettier" } },
+		markdown = { { "prettier" } },
+		svelte = { { "prettier" } },
+		typescript = { { "prettier" } },
+		typescriptreact = { { "prettier" } },
+		vue = { { "prettier" } },
+	},
 })
 
+local function ends_with(str, ending)
+	return ending == "" or string.sub(str, -string.len(ending)) == ending
+end
+
+require("conform").formatters.prettier = {
+	prepend_args = function(ctx)
+		if ends_with(ctx.filename, ".ttml") then
+			return { "--parser", "html" }
+		elseif ends_with(ctx.filename, ".lepus") then
+			return { "--parser", "typescript" }
+		end
+		return {}
+	end,
+}
+
 vim.api.nvim_create_user_command("Format", function(args)
-    local range = nil
-    if args.count ~= -1 then
-        local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-        range = {
-            start = { args.line1, 0 },
-            ["end"] = { args.line2, end_line:len() },
-        }
-    end
-    require("conform").format({ async = true, lsp_fallback = true, range = range })
+	local range = nil
+	if args.count ~= -1 then
+		local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+		range = {
+			start = { args.line1, 0 },
+			["end"] = { args.line2, end_line:len() },
+		}
+	end
+	require("conform").format({ async = true, lsp_fallback = true, range = range })
 end, { range = true })
