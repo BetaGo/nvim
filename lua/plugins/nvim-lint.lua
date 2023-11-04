@@ -1,14 +1,14 @@
 require("lint").linters_by_ft = {
-	markdown = { "cspell" },
-	python = { "pylint", "cspell" },
-	javascript = { "cspell" },
-	typescript = { "cspell" },
-	typescriptreact = { "cspell" },
-	html = { "cspell" },
-	lua = { "cspell" },
+	markdown = { "codespell" },
+	python = { "pylint", "codespell" },
+	javascript = { "codespell" },
+	typescript = { "codespell" },
+	typescriptreact = { "codespell" },
+	html = { "codespell" },
+	lua = { "codespell" },
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
 	callback = function()
 		require("lint").try_lint()
 	end,

@@ -129,7 +129,6 @@ require("lazy").setup({
 			"theHamsta/nvim-dap-virtual-text",
 			"nvim-telescope/telescope-dap.nvim",
 			"mfussenegger/nvim-dap-python",
-			"jay-babu/mason-nvim-dap.nvim",
 		},
 		config = function()
 			require("plugins.nvim-dap")
@@ -241,11 +240,28 @@ require("lazy").setup({
 		cond = nocode,
 	},
 	{
+		"j-hui/fidget.nvim",
+		cond = nocode,
+		tag = "legacy",
+		event = "LspAttach",
+		opts = {
+			-- options
+		},
+	},
+
+	{
 		"simrat39/symbols-outline.nvim",
 		cond = nocode,
-    config = function()
-      require("plugins.symbols-outline")
-    end
+		config = function()
+			require("plugins.symbols-outline")
+		end,
+	},
+	{
+		"danymat/neogen",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("plugins.neogen")
+		end,
 	},
 	{
 		"folke/flash.nvim",
