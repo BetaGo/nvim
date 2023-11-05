@@ -17,6 +17,7 @@ require("nvim-treesitter.configs").setup({
 		"markdown_inline",
 		"toml",
 		"yaml",
+		"sql",
 	},
 	highlight = {
 		enable = true,
