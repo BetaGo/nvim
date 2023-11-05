@@ -3,6 +3,7 @@ local servers = {
 	"lua_ls",
 	-- "rust_analyzer",
 	"pyright",
+	"taplo",
 	"pylsp",
 	"tsserver",
 	"yamlls",
@@ -18,7 +19,6 @@ local servers = {
 local ensure_installed_others = {
 	-- linters
 	"codespell",
-	"pylint",
 
 	-- formatters
 	"isort",

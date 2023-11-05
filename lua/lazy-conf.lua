@@ -102,6 +102,7 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-calc", cond = nocode },
 	{ "hrsh7th/cmp-emoji", cond = nocode },
 	{ "ray-x/cmp-treesitter", cond = nocode },
+	{ "f3fora/cmp-spell" },
 	{
 		"hrsh7th/nvim-cmp",
 		cond = nocode,

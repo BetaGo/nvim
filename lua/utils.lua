@@ -29,14 +29,4 @@ M.say_visual_selection = function()
 	end
 end
 
-M.show_define_word = function()
-	local word = M.get_selected_text()
-	local ok, is_exe = pcall(vim.fn.executable, "sdcv")
-	if ok then
-		-- vim.fn.execute(table.concat(obj, ' '))
-		-- :echo system('ls '..shellescape(expand('%:h')))
-		vim.fn.system("sdcv " .. vim.fn.shellescape(s) .. "&")
-	end
-end
-
 return M

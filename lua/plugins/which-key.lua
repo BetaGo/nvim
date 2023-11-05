@@ -76,7 +76,7 @@ wk.register({
 			"<cmd>Telescope lsp_definitions<cr>",
 			"Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope",
 		},
-		s = {
+		w = {
 			"<cmd>Telescope spell_suggest<cr>",
 			"Lists spelling suggestions for the current word under the cursor, replaces word with selected suggestion on <cr>",
 		},

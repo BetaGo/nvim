@@ -1,11 +1,16 @@
 require("lint").linters_by_ft = {
 	markdown = { "codespell" },
-	python = { "pylint", "codespell" },
+	python = { "codespell" },
 	javascript = { "codespell" },
 	typescript = { "codespell" },
 	typescriptreact = { "codespell" },
 	html = { "codespell" },
+	svelte = { "codespell" },
+	bash = { "codespell" },
 	lua = { "codespell" },
+	yaml = { "codespell" },
+	toml = { "codespell" },
+	json = { "codespell" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
