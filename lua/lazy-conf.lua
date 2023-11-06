@@ -49,7 +49,8 @@ require("lazy").setup({
 	},
 	{ "nvim-telescope/telescope-ui-select.nvim", cond = nocode },
 	{ "princejoogie/dir-telescope.nvim", cond = nocode },
-	{ "projekt0n/github-nvim-theme" },
+	{ "projekt0n/github-nvim-theme", cond = nocode },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000, cond = nocode },
 	{
 		"BetaGo/everforest-nvim",
 		-- dev = true,

@@ -4,7 +4,8 @@ local servers = {
 	-- "rust_analyzer",
 	"pyright",
 	"taplo",
-	"pylsp",
+	-- "pylsp",
+	"ruff_lsp", -- python
 	"tsserver",
 	"yamlls",
 	"bashls",
@@ -21,10 +22,8 @@ local ensure_installed_others = {
 	"codespell",
 
 	-- formatters
-	"isort",
 	"prettier",
 	"stylua",
-	"black",
 
 	-- daps
 	"debugpy",

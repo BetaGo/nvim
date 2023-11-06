@@ -1,4 +1,3 @@
-local lspkind = require("lspkind")
 -- luasnip setup
 local luasnip = require("luasnip")
 -- nvim-cmp setup
@@ -12,10 +11,6 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
-	-- window = {
-	--     completion = cmp_window.bordered(),
-	--     documentation = cmp_window.bordered(),
-	-- },
 	mapping = {
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),
@@ -69,7 +64,6 @@ cmp.setup({
 	window = {
 		completion = {
 			border = "rounded",
-			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 			col_offset = -3,
 			side_padding = 0,
 		},
@@ -129,6 +123,5 @@ cmp.setup({
 			kind.menu = "    (" .. (strings[2] or "") .. ")"
 			return kind
 		end,
-		-- format = lspkind.cmp_format(),
 	},
 })
