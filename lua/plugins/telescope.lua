@@ -3,9 +3,8 @@ local previewers = require("telescope.previewers")
 local trouble = require("trouble.providers.telescope")
 
 require("dir-telescope").setup({
-	-- these are the default options set
-	hidden = true,
-	no_ignore = false,
+	hidden = false,
+	no_ignore = true,
 	show_preview = true,
 })
 

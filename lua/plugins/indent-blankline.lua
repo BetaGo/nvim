@@ -30,5 +30,5 @@ end)
 require("ibl").setup {
     -- indent = { highlight = highlight, char = '┊' },
     scope = { highlight = highlight },
-    indent = { char = '▏' },
+    -- indent = { char = '▏' },
 }
