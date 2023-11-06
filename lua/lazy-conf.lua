@@ -49,10 +49,11 @@ require("lazy").setup({
 	},
 	{ "nvim-telescope/telescope-ui-select.nvim", cond = nocode },
 	{ "princejoogie/dir-telescope.nvim", cond = nocode },
-	{ "projekt0n/github-nvim-theme", cond = nocode },
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000, cond = nocode },
 	{
-		"BetaGo/everforest-nvim",
+		-- "projekt0n/github-nvim-theme"
+		-- "BetaGo/everforest-nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		-- dev = true,
 		cond = nocode,
 		priority = 1000,

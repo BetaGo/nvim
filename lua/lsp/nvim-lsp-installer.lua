@@ -2,9 +2,9 @@
 local servers = {
 	"lua_ls",
 	-- "rust_analyzer",
-	"pyright",
-	"taplo",
+	"taplo", -- toml
 	-- "pylsp",
+	"pyright",
 	"ruff_lsp", -- python
 	"tsserver",
 	"yamlls",
@@ -54,9 +54,9 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local luaConf = require("lsp.languages.lua-ls")
 local enhance_server_opts = {
-	["lua_ls"] = luaConf.lsp_opts,
+	["lua_ls"] = require("lsp.languages.lua-ls").lsp_opts,
+	["ruff_lsp"] = require("lsp.languages.ruff-lsp").lsp_opts,
 }
 
 for _, lsp in pairs(servers) do

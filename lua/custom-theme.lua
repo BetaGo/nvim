@@ -1,12 +1,3 @@
-local config = require("everforest").config
-local palettes = require("everforest.colours")
--- local mod_hl = require("utils").mod_hl
-local palette = palettes.generate_palette(config, vim.o.background)
-
-if config.transparent_background_level == 2 then
-	palette.bg1 = palette.none
-end
-
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
@@ -14,7 +5,9 @@ require("catppuccin").setup({
 		dark = "mocha",
 	},
 	integrations = {
+		alpha = true,
 		cmp = true,
+		flash = true,
 		treesitter = true,
 		notify = true,
 		noice = true,
@@ -25,10 +18,41 @@ require("catppuccin").setup({
 			enabled = true,
 			enable_ui = true, -- enable nvim-dap-ui
 		},
+		telescope = {
+			enabled = true,
+		},
+		lsp_trouble = true,
+		native_lsp = {
+			enabled = true,
+			virtual_text = {
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
+			},
+			underlines = {
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
+			},
+			inlay_hints = {
+				background = true,
+			},
+		},
 	},
 })
 
 vim.cmd.colorscheme("catppuccin")
+
+-- local config = require("everforest").config
+-- local palettes = require("everforest.colours")
+-- local mod_hl = require("utils").mod_hl
+-- local palette = palettes.generate_palette(config, vim.o.background)
+
+-- if config.transparent_background_level == 2 then
+-- 	palette.bg1 = palette.none
+-- end
 
 --
 -- require("everforest").setup({
