@@ -40,6 +40,42 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			program = "${file}",
 			cwd = "${workspaceFolder}",
 		},
+		{
+			type = "pwa-node",
+			request = "launch",
+			name = "[ts-node]Launch Current File (Typescript)",
+			cwd = "${workspaceFolder}",
+			-- runtimeArgs = { "--loader=ts-node/esm" },
+			runtimeArgs = { "--nolazy", "-r", "ts-node/register" },
+			program = "${file}",
+			runtimeExecutable = "node",
+			-- args = { '${file}' },
+			sourceMaps = true,
+			protocol = "inspector",
+			outFiles = { "${workspaceFolder}/**/**/*", "!**/node_modules/**" },
+			skipFiles = { "<node_internals>/**", "node_modules/**" },
+			resolveSourceMapLocations = {
+				"${workspaceFolder}/**",
+				"!**/node_modules/**",
+			},
+		},
+		{
+			type = "pwa-node",
+			request = "launch",
+			name = "[tsx]Launch Current File (Typescript)",
+			cwd = "${workspaceFolder}",
+			runtimeArgs = { "--import", "tsx" },
+			program = "${file}",
+			runtimeExecutable = "node",
+			sourceMaps = true,
+			protocol = "inspector",
+			outFiles = { "${workspaceFolder}/**/**/*", "!**/node_modules/**" },
+			skipFiles = { "<node_internals>/**", "node_modules/**" },
+			resolveSourceMapLocations = {
+				"${workspaceFolder}/**",
+				"!**/node_modules/**",
+			},
+		},
 	}
 end
 

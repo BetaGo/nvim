@@ -27,7 +27,7 @@ wk.register({
 	c = {
 		name = "ChatGPT & Change",
 		c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
-		-- e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
+		e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
 		-- g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
 		-- t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
 		-- k = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
@@ -117,10 +117,9 @@ wk.register({
 
 wk.register({
 	g = {
-		name = "git",
-		c = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "list git commits with diff preview" },
-		b = { "<cmd>lua require('telescope.builtin').git_branches()<cr>", "list all branches with log preview" },
-		g = { "<cmd>LazyGit<cr>", "show lazygit" },
+		name = "git & generate",
+		g = { "<cmd>LazyGit<cr>", "Show lazygit" },
+		d = { "<cmd>lua require('neogen').generate()</cr>", "Generate Docs use neogen" },
 	},
 }, { prefix = "<leader>" })
 

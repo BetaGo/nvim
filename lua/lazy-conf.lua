@@ -15,10 +15,6 @@ local nocode = function()
 	return vim.fn.exists("g:vscode") == 0
 end
 
-local incode = function()
-	return vim.fn.exists("g:vscode") ~= 0
-end
-
 require("lazy").setup({
 	{ "kdheepak/lazygit.nvim", cond = nocode },
 	{
@@ -104,7 +100,7 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-calc", cond = nocode },
 	{ "hrsh7th/cmp-emoji", cond = nocode },
 	{ "ray-x/cmp-treesitter", cond = nocode },
-	{ "f3fora/cmp-spell" },
+	{ "f3fora/cmp-spell", cond = nocode },
 	{
 		"hrsh7th/nvim-cmp",
 		cond = nocode,
@@ -338,6 +334,7 @@ require("lazy").setup({
 	{
 		"epwalsh/obsidian.nvim",
 		lazy = true,
+		cond = nocode,
 		event = {
 			"BufReadPre " .. require("user-conf").obsidian_valut_path .. "/**.md",
 			"BufNewFile " .. require("user-conf").obsidian_valut_path .. "/**.md",
@@ -361,6 +358,7 @@ require("lazy").setup({
 	{ "RRethy/vim-illuminate", cond = nocode }, -- automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
 	{
 		"ahmedkhalf/project.nvim",
+		cond = nocode,
 		config = function()
 			require("plugins.project")
 		end,
@@ -374,6 +372,24 @@ require("lazy").setup({
 	},
 	{ "nvim-pack/nvim-spectre", cond = nocode }, -- search & replace text
 	{ "kevinhwang91/nvim-bqf", ft = "qf", cond = nocode },
+	{
+		"mikesmithgh/kitty-scrollback.nvim",
+		cond = nocode,
+		enabled = true,
+		lazy = true,
+		cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
+		event = { "User KittyScrollbackLaunch" },
+		version = "*", -- latest stable version, may have breaking changes if major version changed
+		-- version = '^2.0.0', -- pin major version, include fixes and features that do not have breaking changes
+		config = function()
+			require("kitty-scrollback").setup()
+		end,
+	},
+	{
+		"stevearc/dressing.nvim",
+		cond = nocode,
+		opts = {},
+	},
 }, {
 	dev = {
 		-- directory where you store your local plugin projects

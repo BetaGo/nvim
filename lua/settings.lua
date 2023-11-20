@@ -36,7 +36,7 @@ local settings = {
 	foldcolumn = "2",
 
 	spell = true, -- enable spellsuggest
-	spelllang = { "en_us" },
+	spelllang = { "en_us", "cjk" },
 }
 
 for key, value in pairs(settings) do
