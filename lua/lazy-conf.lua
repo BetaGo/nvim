@@ -406,6 +406,14 @@ require("lazy").setup({
 			})
 		end,
 	},
+	{
+		"anuvyklack/windows.nvim",
+		dependencies = "anuvyklack/middleclass",
+		config = function()
+			require("windows").setup()
+		end,
+	},
+	{ "eandrju/cellular-automaton.nvim" },
 }, {
 	dev = {
 		-- directory where you store your local plugin projects

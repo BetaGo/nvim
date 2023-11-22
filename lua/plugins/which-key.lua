@@ -108,11 +108,8 @@ wk.register({
 			"<cmd>lua require('telescope.builtin').oldfiles()<cr>",
 			"Lists previously open files",
 		},
+		p = { '<cmd>lua require("spectre").toggle()<CR>', "Toggle Spectre, Search & replace text" },
 	},
-}, { prefix = "<leader>" })
-
-wk.register({
-	S = { '<cmd>lua require("spectre").toggle()<CR>', "Toggle Spectre, Search & replace text" },
 }, { prefix = "<leader>" })
 
 wk.register({
