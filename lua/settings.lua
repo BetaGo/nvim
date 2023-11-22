@@ -33,10 +33,14 @@ local settings = {
 	-- numberwidth = 4,                         -- set number column width to 2 {default 4}
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	-- wrap = false, -- display lines as one long line
-	foldcolumn = "2",
 
 	spell = true, -- enable spellsuggest
 	spelllang = { "en_us", "cjk" },
+
+	foldcolumn = "1",
+  foldlevelstart = 99,
+  foldlevel = 99,
+  foldenable = true,
 }
 
 for key, value in pairs(settings) do

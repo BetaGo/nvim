@@ -8,6 +8,7 @@ require("catppuccin").setup({
 		alpha = true,
 		cmp = true,
 		flash = true,
+    ufo = true,
 		treesitter = true,
 		notify = true,
 		noice = true,

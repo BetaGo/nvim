@@ -390,6 +390,22 @@ require("lazy").setup({
 		cond = nocode,
 		opts = {},
 	},
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = "kevinhwang91/promise-async",
+		cond = nocode,
+		config = function()
+			require("plugins.nvim-ufo")
+		end,
+	},
+	{
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup({
+				mapping = { "kk", "jj" },
+			})
+		end,
+	},
 }, {
 	dev = {
 		-- directory where you store your local plugin projects

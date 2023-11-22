@@ -51,14 +51,18 @@ local on_attach = function(_, bufnr)
 end
 
 -- nvim-cmp supports additional completion capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities()
-
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
 local enhance_server_opts = {
 	["lua_ls"] = require("lsp.languages.lua-ls").lsp_opts,
 	["ruff_lsp"] = require("lsp.languages.ruff-lsp").lsp_opts,
 }
 
+-- local language_servers = require("lspconfig").util.available_servers()
 for _, lsp in pairs(servers) do
 	local opts = {
 		on_attach = on_attach,

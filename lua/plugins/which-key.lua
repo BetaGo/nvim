@@ -119,7 +119,7 @@ wk.register({
 	g = {
 		name = "git & generate",
 		g = { "<cmd>LazyGit<cr>", "Show lazygit" },
-		d = { "<cmd>lua require('neogen').generate()</cr>", "Generate Docs use neogen" },
+		d = { "<cmd>lua require('neogen').generate()<cr>", "Generate Docs use neogen" },
 	},
 }, { prefix = "<leader>" })
 
