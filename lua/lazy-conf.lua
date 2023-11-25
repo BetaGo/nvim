@@ -90,6 +90,7 @@ require("lazy").setup({
 		"stevearc/conform.nvim", -- formatters
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
+		cond = nocode,
 		config = function()
 			require("plugins.conform")
 		end,
@@ -400,6 +401,7 @@ require("lazy").setup({
 	},
 	{
 		"max397574/better-escape.nvim",
+		cond = nocode,
 		config = function()
 			require("better_escape").setup({
 				mapping = { "kk", "jj" },
@@ -409,11 +411,12 @@ require("lazy").setup({
 	{
 		"anuvyklack/windows.nvim",
 		dependencies = "anuvyklack/middleclass",
+		cond = nocode,
 		config = function()
 			require("windows").setup()
 		end,
 	},
-	{ "eandrju/cellular-automaton.nvim" },
+	{ "eandrju/cellular-automaton.nvim", cond = nocode },
 }, {
 	dev = {
 		-- directory where you store your local plugin projects
