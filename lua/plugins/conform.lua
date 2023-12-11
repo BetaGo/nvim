@@ -9,6 +9,8 @@ require("conform").setup({
 		json = { { "prettier" } },
 		css = { { "prettier" } },
 		less = { { "prettier" } },
+		scss = { { "prettier" } },
+		sass = { { "prettier" } },
 		jsonc = { { "prettier" } },
 		markdown = { { "prettier" } },
 		svelte = { { "prettier" } },
@@ -23,7 +25,7 @@ local function ends_with(str, ending)
 end
 
 require("conform").formatters.prettier = {
-	prepend_args = function(ctx)
+	prepend_args = function(self, ctx)
 		if ends_with(ctx.filename, ".ttml") then
 			return { "--parser", "html" }
 		elseif ends_with(ctx.filename, ".lepus") then

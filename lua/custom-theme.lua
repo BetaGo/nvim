@@ -1,14 +1,15 @@
 require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
+	-- flavour = "mocha", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
 		light = "latte",
 		dark = "mocha",
 	},
+	term_colors = true,
 	integrations = {
 		alpha = true,
 		cmp = true,
 		flash = true,
-    ufo = true,
+		ufo = true,
 		treesitter = true,
 		notify = true,
 		noice = true,

@@ -38,9 +38,9 @@ local settings = {
 	spelllang = { "en_us", "cjk" },
 
 	foldcolumn = "1",
-  foldlevelstart = 99,
-  foldlevel = 99,
-  foldenable = true,
+	foldlevelstart = 99,
+	foldlevel = 99,
+	foldenable = true,
 }
 
 for key, value in pairs(settings) do

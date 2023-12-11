@@ -46,7 +46,7 @@ wk.register({
 wk.register({
 	f = {
 		name = "file",
-		f = { "<cmd>lua require('conform').format({async = true, lsp_fallback = true })<cr>", "format current file" },
+		f = { "<cmd>Format<cr>", "format current file or selection" },
 		d = { "<cmd>DiffChangesDiffToggle<cr>", "show current file diff changes with saved" },
 		b = { "<cmd>Telescope file_browser<cr>", "show Telescope file browser" },
 		c = {

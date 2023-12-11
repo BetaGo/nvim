@@ -408,14 +408,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
-		"anuvyklack/windows.nvim",
-		dependencies = "anuvyklack/middleclass",
-		cond = nocode,
-		config = function()
-			require("windows").setup()
-		end,
-	},
 	{ "eandrju/cellular-automaton.nvim", cond = nocode },
 }, {
 	dev = {
