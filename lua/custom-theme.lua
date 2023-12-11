@@ -5,6 +5,7 @@ require("catppuccin").setup({
 		dark = "mocha",
 	},
 	term_colors = true,
+	-- transparent_background = true,
 	integrations = {
 		alpha = true,
 		cmp = true,
@@ -16,10 +17,8 @@ require("catppuccin").setup({
 		symbols_outline = true,
 		which_key = true,
 		mason = true,
-		dap = {
-			enabled = true,
-			enable_ui = true, -- enable nvim-dap-ui
-		},
+		dap = true,
+    dap_ui = true,
 		telescope = {
 			enabled = true,
 		},

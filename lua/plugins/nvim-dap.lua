@@ -7,6 +7,8 @@ local dap, dapui = require("dap"), require("dapui")
 
 dapui.setup({}) -- use default
 
+local js_based_languages = { "typescript", "javascript", "typescriptreact" }
+
 dap.adapters["pwa-node"] = {
 	type = "server",
 	host = "127.0.0.1",
@@ -21,7 +23,7 @@ dap.adapters["pwa-node"] = {
 	},
 }
 
-for _, language in ipairs({ "typescript", "javascript" }) do
+for _, language in ipairs(js_based_languages) do
 	dap.configurations[language] = {
 		{
 			type = "pwa-node",
@@ -78,6 +80,13 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 		},
 	}
 end
+
+require("dap.ext.vscode").load_launchjs(nil, {
+	["pwa-node"] = js_based_languages,
+	-- ["node"] = js_based_languages,
+	-- ["chrome"] = js_based_languages,
+	-- ["pwa-chrome"] = js_based_languages,
+})
 
 dap.defaults.fallback.exception_breakpoints = { "uncaughted", "uncaught" }
 

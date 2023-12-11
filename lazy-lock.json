@@ -24,7 +24,7 @@
   "git-blame.nvim": { "branch": "master", "commit": "f07e913b7143f19edd6787229f2d51759b478600" },
   "indent-blankline.nvim": { "branch": "master", "commit": "7206c77cb931f79885fc47f88ae18f99148392eb" },
   "jupytext.vim": { "branch": "master", "commit": "ec8f337bd5799e16a02816d04b7c91b9555d79c2" },
-  "kitty-scrollback.nvim": { "branch": "main", "commit": "4ebe434f70e8ea75a87251d00323fa60d1e5a117" },
+  "kitty-scrollback.nvim": { "branch": "main", "commit": "a97aef85a9d202160bf7e0f0ac46d02fd9f55875" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lazygit.nvim": { "branch": "main", "commit": "de35012036d43bca03628d40d083f7c02a4cda3f" },
   "lspkind.nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
