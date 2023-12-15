@@ -2,6 +2,7 @@ require("lint").linters_by_ft = {
 	markdown = { "codespell" },
 	python = { "codespell" },
 	javascript = { "codespell" },
+	javascriptreact = { "codespell" },
 	typescript = { "codespell" },
 	typescriptreact = { "codespell" },
 	html = { "codespell" },

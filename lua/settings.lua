@@ -34,7 +34,7 @@ local settings = {
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	-- wrap = false, -- display lines as one long line
 
-	spell = true, -- enable spellsuggest
+	-- spell = true, -- enable spellsuggest
 	spelllang = { "en_us", "cjk" },
 
 	foldcolumn = "1",
