@@ -66,6 +66,7 @@ cmp.setup({
 			border = "rounded",
 			col_offset = -3,
 			side_padding = 0,
+			winhighlight = "Normal:CmpNormal",
 		},
 		documentation = cmp_window.bordered(),
 	},
