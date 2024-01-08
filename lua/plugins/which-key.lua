@@ -24,6 +24,15 @@ wk.register({
 })
 
 wk.register({
+	["<leader>xe"] = {
+		"<cmd>lua require('nvim-emmet').wrap_with_abbreviation()<CR>",
+		"wrap with abbreviation",
+	},
+}, {
+	mode = { "n", "v" },
+})
+
+wk.register({
 	c = {
 		name = "ChatGPT & Change",
 		c = { "<cmd>ChatGPT<CR>", "ChatGPT" },

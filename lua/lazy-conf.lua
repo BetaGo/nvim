@@ -77,6 +77,13 @@ require("lazy").setup({
 		-- cond = nocode
 	},
 	{
+		"windwp/nvim-ts-autotag",
+		cond = nocode,
+		config = function()
+			require("plugins.nvim-ts-autotag")
+		end,
+	},
+	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
 		cond = nocode,
@@ -190,9 +197,7 @@ require("lazy").setup({
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
 		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
+			require("plugins.nvim-surround")
 		end,
 	},
 	{
@@ -271,7 +276,7 @@ require("lazy").setup({
 		keys = {
 			{
 				"s",
-				mode = { "n", "x", "o" },
+				mode = { "n", "o" },
 				function()
 					require("flash").jump()
 				end,
@@ -279,28 +284,28 @@ require("lazy").setup({
 			},
 			{
 				"S",
-				mode = { "n", "o", "x" },
+				mode = { "n", "o" },
 				function()
 					require("flash").treesitter()
 				end,
 				desc = "Flash Treesitter",
 			},
-			{
-				"R",
-				mode = { "o", "x" },
-				function()
-					require("flash").treesitter_search()
-				end,
-				desc = "Treesitter Search",
-			},
-			{
-				"<c-s>",
-				mode = { "c" },
-				function()
-					require("flash").toggle()
-				end,
-				desc = "Toggle Flash Search",
-			},
+			-- {
+			-- 	"R",
+			-- 	mode = { "o", "x" },
+			-- 	function()
+			-- 		require("flash").treesitter_search()
+			-- 	end,
+			-- 	desc = "Treesitter Search",
+			-- },
+			-- {
+			-- 	"<c-s>",
+			-- 	mode = { "c" },
+			-- 	function()
+			-- 		require("flash").toggle()
+			-- 	end,
+			-- 	desc = "Toggle Flash Search",
+			-- },
 		},
 	},
 	{ "ojroques/nvim-osc52" },
@@ -408,6 +413,7 @@ require("lazy").setup({
 			})
 		end,
 	},
+	{ "olrtg/nvim-emmet", cond = nocode },
 	{ "eandrju/cellular-automaton.nvim", cond = nocode },
 	-- {
 	-- 	"f-person/auto-dark-mode.nvim",

@@ -15,6 +15,7 @@ local servers = {
 	"cssls",
 	"svelte",
 	"jsonls",
+	"emmet_language_server",
 }
 
 local ensure_installed_others = {
