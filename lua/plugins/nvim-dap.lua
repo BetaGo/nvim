@@ -11,7 +11,23 @@ local js_based_languages = { "typescript", "javascript", "typescriptreact" }
 
 dap.adapters["pwa-node"] = {
 	type = "server",
-	host = "127.0.0.1",
+	-- host = "127.0.0.1",
+	host = "localhost",
+	port = "${port}",
+	executable = {
+		command = "node",
+		-- 💀 Make sure to update this path to point to your installation
+		args = {
+			vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+			"${port}",
+		},
+	},
+}
+
+dap.adapters["pwa-chrome"] = {
+	type = "server",
+	-- host = "127.0.0.1",
+	host = "localhost",
 	port = "${port}",
 	executable = {
 		command = "node",
@@ -43,41 +59,62 @@ for _, language in ipairs(js_based_languages) do
 			cwd = "${workspaceFolder}",
 		},
 		{
-			type = "pwa-node",
-			request = "launch",
-			name = "[ts-node]Launch Current File (Typescript)",
+
+			name = "Attach chrome",
+			type = "pwa-chrome",
+			request = "attach",
 			cwd = "${workspaceFolder}",
-			-- runtimeArgs = { "--loader=ts-node/esm" },
-			runtimeArgs = { "--nolazy", "-r", "ts-node/register" },
-			program = "${file}",
-			runtimeExecutable = "node",
-			-- args = { '${file}' },
-			sourceMaps = true,
 			protocol = "inspector",
-			outFiles = { "${workspaceFolder}/**/**/*", "!**/node_modules/**" },
-			skipFiles = { "<node_internals>/**", "node_modules/**" },
-			resolveSourceMapLocations = {
-				"${workspaceFolder}/**",
-				"!**/node_modules/**",
-			},
+			port = 9222,
+			webRoot = "${workspaceFolder}",
 		},
 		{
-			type = "pwa-node",
+
+			name = "Launch chrome",
+			type = "pwa-chrome",
 			request = "launch",
-			name = "[tsx]Launch Current File (Typescript)",
-			cwd = "${workspaceFolder}",
-			runtimeArgs = { "--import", "tsx" },
-			program = "${file}",
-			runtimeExecutable = "node",
-			sourceMaps = true,
-			protocol = "inspector",
-			outFiles = { "${workspaceFolder}/**/**/*", "!**/node_modules/**" },
-			skipFiles = { "<node_internals>/**", "node_modules/**" },
-			resolveSourceMapLocations = {
-				"${workspaceFolder}/**",
-				"!**/node_modules/**",
-			},
+			webRoot = "${workspaceFolder}",
+			url = function()
+				return "http://localhost" .. vim.fn.input("{:Port?}/{path}: ")
+			end,
 		},
+
+		-- {
+		-- 	type = "pwa-node",
+		-- 	request = "launch",
+		-- 	name = "[ts-node]Launch Current File (Typescript)",
+		-- 	cwd = "${workspaceFolder}",
+		-- 	-- runtimeArgs = { "--loader=ts-node/esm" },
+		-- 	runtimeArgs = { "--nolazy", "-r", "ts-node/register" },
+		-- 	program = "${file}",
+		-- 	runtimeExecutable = "node",
+		-- 	-- args = { '${file}' },
+		-- 	sourceMaps = true,
+		-- 	protocol = "inspector",
+		-- 	outFiles = { "${workspaceFolder}/**/**/*", "!**/node_modules/**" },
+		-- 	skipFiles = { "<node_internals>/**", "node_modules/**" },
+		-- 	resolveSourceMapLocations = {
+		-- 		"${workspaceFolder}/**",
+		-- 		"!**/node_modules/**",
+		-- 	},
+		-- },
+		-- {
+		-- 	type = "pwa-node",
+		-- 	request = "launch",
+		-- 	name = "[tsx]Launch Current File (Typescript)",
+		-- 	cwd = "${workspaceFolder}",
+		-- 	runtimeArgs = { "--import", "tsx" },
+		-- 	program = "${file}",
+		-- 	runtimeExecutable = "node",
+		-- 	sourceMaps = true,
+		-- 	protocol = "inspector",
+		-- 	outFiles = { "${workspaceFolder}/**/**/*", "!**/node_modules/**" },
+		-- 	skipFiles = { "<node_internals>/**", "node_modules/**" },
+		-- 	resolveSourceMapLocations = {
+		-- 		"${workspaceFolder}/**",
+		-- 		"!**/node_modules/**",
+		-- 	},
+		-- },
 	}
 end
 

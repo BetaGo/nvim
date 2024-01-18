@@ -15,6 +15,10 @@ local nocode = function()
 	return vim.fn.exists("g:vscode") == 0
 end
 
+local no_code_and_neovide = function()
+	return vim.fn.exists("g:vscode") == 0 and vim.fn.exists("g:neovide") == 0
+end
+
 require("lazy").setup({
 	{ "kdheepak/lazygit.nvim", cond = nocode },
 	{
@@ -425,6 +429,37 @@ require("lazy").setup({
 		keys = {
 			"ga", -- Default invocation prefix
 			{ "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "v" }, desc = "Telescope" },
+		},
+	},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+	-- 	ft = { "markdown" },
+	-- 	build = function()
+	-- 		vim.fn["mkdp#util#install"]()
+	-- 	end,
+	-- },
+	{
+		"3rd/image.nvim",
+		cond = no_code_and_neovide(),
+		config = function()
+			require("plugins.image")
+		end,
+	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 	},
 	-- {
