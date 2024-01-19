@@ -98,6 +98,11 @@ require("lazy").setup({
 		cond = nocode,
 	},
 	{
+		"pmizio/typescript-tools.nvim",
+		cond = nocode,
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	},
+	{
 		"stevearc/conform.nvim", -- formatters
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },

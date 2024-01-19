@@ -57,7 +57,8 @@ wk.register({
 		name = "file",
 		f = { "<cmd>Format<cr>", "format current file or selection" },
 		d = { "<cmd>DiffChangesDiffToggle<cr>", "show current file diff changes with saved" },
-		b = { "<cmd>Telescope file_browser<cr>", "show Telescope file browser" },
+		-- b = { "<cmd>Telescope file_browser<cr>", "show Telescope file browser" },
+		b = { "<cmd>Neotree toggle<cr>", "show Neotree file browser" },
 		c = {
 			"<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
 			"open file browser with the path of the current buffer",
