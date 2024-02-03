@@ -103,6 +103,11 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	},
 	{
+		"mrcjkb/rustaceanvim",
+		version = "^4", -- Recommended
+		ft = { "rust" },
+	},
+	{
 		"stevearc/conform.nvim", -- formatters
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },

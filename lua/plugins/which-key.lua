@@ -67,33 +67,6 @@ wk.register({
 }, { prefix = "<leader>" })
 
 wk.register({
-	l = {
-		name = "Language Actions",
-		r = { "<cmd>Telescope lsp_references<cr>", "Lists LSP references for word under the cursor" },
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP code action" },
-		i = { "<cmd>Telescope lsp_incoming_calls<cr>", "Lists LSP incoming calls for word under the cursor" },
-		o = { "<cmd>Telescope lsp_outgoing_calls<cr>", "Lists LSP outgoing calls for word under the cursor" },
-		l = { "<cmd>SymbolsOutline<cr>", "Toggle symbols outline" },
-		q = {
-			"<cmd>lua require('trouble').toggle('document_diagnostics')<cr>",
-			"document diagnostics from the builtin LSP client",
-		},
-		e = {
-			"<cmd>lua require('trouble').toggle('workspace_diagnostics')<cr>",
-			"workspace diagnostics from the builtin LSP client",
-		},
-		d = {
-			"<cmd>Telescope lsp_definitions<cr>",
-			"Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope",
-		},
-		w = {
-			"<cmd>Telescope spell_suggest<cr>",
-			"Lists spelling suggestions for the current word under the cursor, replaces word with selected suggestion on <cr>",
-		},
-	},
-}, { prefix = "<leader>" })
-
-wk.register({
 	s = {
 		name = "search file or docs",
 		c = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "fuzzy search current file" },
