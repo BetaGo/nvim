@@ -4,6 +4,57 @@ local luasnip = require("luasnip")
 local cmp = require("cmp")
 local cmp_window = require("cmp.config.window")
 local devicons = require("nvim-web-devicons")
+local lspkind = require("lspkind")
+
+lspkind.init({
+	-- DEPRECATED (use mode instead): enables text annotations
+	--
+	-- default: true
+	-- with_text = true,
+
+	-- defines how annotations are shown
+	-- default: symbol
+	-- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+	mode = "symbol_text",
+
+	-- default symbol map
+	-- can be either 'default' (requires nerd-fonts font) or
+	-- 'codicons' for codicon preset (requires vscode-codicons font)
+	--
+	-- default: 'default'
+	preset = "default",
+
+	-- override preset symbols
+	--
+	-- default: {}
+	symbol_map = {
+		Text = "󰉿",
+		Method = "󰆧",
+		Function = "󰊕",
+		Constructor = "",
+		Field = "󰜢",
+		Variable = "󰀫",
+		Class = "󰠱",
+		Interface = "",
+		Module = "",
+		Property = "󰜢",
+		Unit = "󰑭",
+		Value = "󰎠",
+		Enum = "",
+		Keyword = "󰌋",
+		Snippet = "",
+		Color = "󰏘",
+		File = "󰈙",
+		Reference = "󰈇",
+		Folder = "󰉋",
+		EnumMember = "",
+		Constant = "󰏿",
+		Struct = "󰙅",
+		Event = "",
+		Operator = "󰆕",
+		TypeParameter = "󰰦",
+	},
+})
 
 cmp.setup({
 	snippet = {
@@ -71,6 +122,7 @@ cmp.setup({
 		documentation = cmp_window.bordered(),
 	},
 	formatting = {
+		expandable_indicator = true,
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			if vim.tbl_contains({ "path" }, entry.source.name) then
@@ -82,7 +134,7 @@ cmp.setup({
 					return vim_item
 				end
 			end
-			local kind = require("lspkind").cmp_format({
+			local kind = lspkind.cmp_format({
 				mode = "symbol_text",
 				maxwidth = 50,
 				before = function(entry_l, vim_item_l)
@@ -110,6 +162,10 @@ cmp.setup({
 						treesitter = {
 							hl_group = "CmpItemKindUnit",
 							kind = " Treesitter",
+						},
+						TypeParameter = {
+							hl_group = "CmpItemKindText",
+							kind = "󰰦 TypeParameter",
 						},
 					})[entry_l.source.name]
 					if k then

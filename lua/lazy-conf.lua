@@ -240,6 +240,14 @@ require("lazy").setup({
 		end,
 	},
 	{
+		"folke/twilight.nvim",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
+	{
 		"BetaGo/nvim-colorizer.lua",
 		cond = nocode,
 		config = function()
@@ -363,7 +371,7 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 		},
 		opts = {
-			dir = require("user-conf").ojroques,
+			dir = require("user-conf").obsidian_valut_path,
 		},
 	},
 	{
@@ -447,14 +455,15 @@ require("lazy").setup({
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	-- 	ft = { "markdown" },
-	-- 	build = function()
-	-- 		vim.fn["mkdp#util#install"]()
-	-- 	end,
-	-- },
+	{
+		"BetaGo/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+	},
 	{
 		"3rd/image.nvim",
 		cond = no_code_and_neovide(),
@@ -472,20 +481,12 @@ require("lazy").setup({
 			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 	},
-	-- {
-	-- 	"f-person/auto-dark-mode.nvim",
-	-- 	config = {
-	-- 		update_interval = 1000,
-	-- 		set_dark_mode = function()
-	-- 			vim.api.nvim_set_option("background", "dark")
-	-- 			-- vim.cmd("colorscheme gruvbox")
-	-- 		end,
-	-- 		set_light_mode = function()
-	-- 			vim.api.nvim_set_option("background", "light")
-	-- 			-- vim.cmd("colorscheme gruvbox")
-	-- 		end,
-	-- 	},
-	-- },
+	{
+		"chentoast/marks.nvim",
+		config = function()
+			require("plugins.marks")
+		end,
+	},
 }, {
 	dev = {
 		-- directory where you store your local plugin projects
