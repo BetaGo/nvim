@@ -1,5 +1,5 @@
 require("lint").linters_by_ft = {
-	markdown = { "codespell" },
+	markdown = { "codespell", "vale" },
 	python = { "codespell" },
 	javascript = { "codespell" },
 	javascriptreact = { "codespell" },

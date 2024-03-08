@@ -15,6 +15,9 @@ wk.setup({
 		spacing = 3, -- spacing between columns
 		align = "left", -- align columns left, center or right
 	},
+	triggers_blacklist = {
+		n = { "d", "y" },
+	},
 })
 -- vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "NONE", fg = "NONE" })
 -- vim.api.nvim_set_hl(0, "WhichKeyBorder", { bg = "NONE" })

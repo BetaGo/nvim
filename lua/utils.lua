@@ -29,4 +29,26 @@ M.say_visual_selection = function()
 	end
 end
 
+M.resolve_absolute_path = function(document_file_path, image_path)
+	if string.sub(image_path, 1, 1) == "/" then
+		return image_path
+	end
+	if string.sub(image_path, 1, 1) == "~" then
+		return vim.fn.fnamemodify(image_path, ":p")
+	end
+	local document_dir = vim.fn.fnamemodify(document_file_path, ":h")
+	local absolute_image_path = document_dir .. "/" .. image_path
+	absolute_image_path = vim.fn.fnamemodify(absolute_image_path, ":p")
+	return absolute_image_path
+end
+
+M.remove_query_string = function(url)
+	local questionMarkPos = string.find(url, "?")
+	if questionMarkPos then
+		return string.sub(url, 1, questionMarkPos - 1)
+	else
+		return url
+	end
+end
+
 return M

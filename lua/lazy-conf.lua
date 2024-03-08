@@ -223,6 +223,7 @@ require("lazy").setup({
 		end,
 	},
 	{ "jmcantrell/vim-diffchanges", cond = nocode },
+	{ "sindrets/diffview.nvim" },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
@@ -482,11 +483,16 @@ require("lazy").setup({
 		},
 	},
 	{
-		"chentoast/marks.nvim",
+		"mvllow/modes.nvim",
 		config = function()
-			require("plugins.marks")
+			require("modes").setup()
 		end,
 	},
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	-- 	opts = {},
+	-- },
 }, {
 	dev = {
 		-- directory where you store your local plugin projects

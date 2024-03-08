@@ -1,4 +1,5 @@
 local backend = "kitty"
+local utils = require("utils")
 if vim.g.neovide then
 	backend = "ueberzug"
 end
@@ -12,6 +13,11 @@ require("image").setup({
 			download_remote_images = true,
 			only_render_image_at_cursor = true,
 			filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
+			resolve_image_path = function(document_path, image_path, fallback)
+				local p = utils.remove_query_string(image_path)
+				return utils.resolve_absolute_path(document_path, p)
+				-- return fallback(document_path, p)
+			end,
 		},
 		neorg = {
 			enabled = true,
