@@ -10,28 +10,28 @@ require("chatgpt").setup({
 		top_p = 1,
 		n = 1,
 	},
-	-- chat = {
-	-- 	welcome_message = WELCOME_MESSAGE,
-	-- 	loading_text = "Loading, please wait ...",
-	-- 	question_sign = "", -- 🙂
-	-- 	answer_sign = "󰚩", -- 🤖
-	-- 	border_left_sign = "",
-	-- 	border_right_sign = "",
-	-- 	max_line_length = 120,
-	-- 	sessions_window = {
-	-- 		active_sign = " 󰱒 ",
-	-- 		inactive_sign = "  ",
-	-- 		current_line_sign = "",
-	-- 		border = {
-	-- 			style = "rounded",
-	-- 			text = {
-	-- 				top = " Sessions ",
-	-- 			},
-	-- 		},
-	-- 		win_options = {
-	-- 			winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
-	-- 		},
-	-- 	},
-	-- },
+	chat = {
+		welcome_message = WELCOME_MESSAGE,
+		loading_text = "Loading, please wait ...",
+		question_sign = "", -- 🙂
+		answer_sign = "󰚩", -- 🤖
+		border_left_sign = "",
+		border_right_sign = "",
+		max_line_length = 120,
+		sessions_window = {
+			active_sign = " 󰱒 ",
+			inactive_sign = "  ",
+			current_line_sign = "",
+			border = {
+				style = "rounded",
+				text = {
+					top = " Sessions ",
+				},
+			},
+			win_options = {
+				winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+			},
+		},
+	},
 	actions_paths = { plugin_path .. "/chatgpt-actions.json" },
 })

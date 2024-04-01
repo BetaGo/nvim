@@ -19,6 +19,9 @@ require("nvim-treesitter.configs").setup({
 		"yaml",
 		"sql",
 		"rust",
+		"xml",
+		"http",
+		"graphql",
 	},
 	highlight = {
 		enable = true,

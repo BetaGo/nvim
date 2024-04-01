@@ -32,7 +32,9 @@ require("lualine").setup({
 			"mode",
 		},
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
+		lualine_c = {
+			"filename",
+		},
 		lualine_x = {
 			{
 				require("noice").api.status.command.get,

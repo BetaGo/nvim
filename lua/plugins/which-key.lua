@@ -15,9 +15,9 @@ wk.setup({
 		spacing = 3, -- spacing between columns
 		align = "left", -- align columns left, center or right
 	},
-	triggers_blacklist = {
-		n = { "d", "y" },
-	},
+	-- triggers_blacklist = {
+	-- 	n = { "d", "y" },
+	-- },
 })
 -- vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "NONE", fg = "NONE" })
 -- vim.api.nvim_set_hl(0, "WhichKeyBorder", { bg = "NONE" })
@@ -75,7 +75,7 @@ wk.register({
 		c = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "fuzzy search current file" },
 		f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files, search files" },
 		s = {
-			"<cmd>lua require('telescope.builtin').live_grep()<cr>",
+			"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
 			"search for a string in current working directory",
 		},
 		d = {

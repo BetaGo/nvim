@@ -26,7 +26,7 @@ local lsp_servers = {
 local ensure_installed_others = {
 	-- linters
 	"codespell",
-  "vale",
+	"vale",
 
 	-- formatters
 	"prettier",

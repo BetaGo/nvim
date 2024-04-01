@@ -32,7 +32,10 @@ require("lazy").setup({
 	{ "JoosepAlviste/nvim-ts-context-commentstring", cond = nocode },
 	{
 		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-live-grep-args.nvim",
+		},
 		cond = nocode,
 		config = function()
 			require("plugins.telescope")
@@ -146,7 +149,6 @@ require("lazy").setup({
 		"mfussenegger/nvim-dap",
 		cond = nocode,
 		dependencies = {
-			"rcarriga/nvim-dap-ui",
 			"theHamsta/nvim-dap-virtual-text",
 			"nvim-telescope/telescope-dap.nvim",
 			"mfussenegger/nvim-dap-python",
@@ -154,6 +156,15 @@ require("lazy").setup({
 		config = function()
 			require("plugins.nvim-dap")
 		end,
+	},
+	{
+
+		"rcarriga/nvim-dap-ui",
+		cond = nocode,
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"nvim-neotest/nvim-nio",
+		},
 	},
 	{
 		"folke/neodev.nvim",
@@ -170,17 +181,17 @@ require("lazy").setup({
 			require("plugins.lualine")
 		end,
 	},
-	{
-		"kdheepak/tabline.nvim",
-		cond = nocode,
-		dependencies = {
-			"nvim-lualine/lualine.nvim",
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = function()
-			require("plugins.tabline")
-		end,
-	},
+	-- {
+	-- 	"kdheepak/tabline.nvim",
+	-- 	cond = nocode,
+	-- 	dependencies = {
+	-- 		"nvim-lualine/lualine.nvim",
+	-- 		"kyazdani42/nvim-web-devicons",
+	-- 	},
+	-- 	config = function()
+	-- 		require("plugins.tabline")
+	-- 	end,
+	-- },
 	{
 		"folke/which-key.nvim",
 		cond = nocode,
@@ -482,12 +493,53 @@ require("lazy").setup({
 			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 	},
+	-- {
+	-- 	"vhyrro/luarocks.nvim",
+	-- 	branch = "go-away-python",
+	-- 	opts = {
+	-- 		rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }, -- Specify LuaRocks packages to install
+	-- 	},
+	-- 	config = function()
+	-- 		require("luarocks").setup({})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"rest-nvim/rest.nvim",
+	-- 	ft = "http",
+	-- 	-- dependencies = { "luarocks.nvim" },
+	-- 	config = function()
+	-- 		require("rest-nvim").setup()
+	-- 	end,
+	-- },
+	-- {
+	-- 	"mvllow/modes.nvim",
+	-- 	config = function()
+	-- 		require("modes").setup({
+	-- 			line_opacity = {
+	-- 				visual = 0.1,
+	-- 			},
+	-- 			colors = {
+	-- 				copy = "#f5c359",
+	-- 				delete = "#c75c6a",
+	-- 				insert = "#78ccc5",
+	-- 				visual = "#9745be",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
-		"mvllow/modes.nvim",
-		config = function()
-			require("modes").setup()
-		end,
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		opts = {
+			-- configurations go here
+		},
 	},
+
 	-- {
 	-- 	"m4xshen/hardtime.nvim",
 	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
