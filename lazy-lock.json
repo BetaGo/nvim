@@ -15,6 +15,7 @@
   "cmp-spell": { "branch": "master", "commit": "32a0867efa59b43edbb2db67b0871cfad90c9b66" },
   "cmp-treesitter": { "branch": "master", "commit": "13e4ef8f4dd5639fca2eb9150e68f47639a9b37d" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
+  "colorful-winsep.nvim": { "branch": "alpha", "commit": "3aeef4102c618d5e2a116e60caabfb1d7b1980dc" },
   "conform.nvim": { "branch": "master", "commit": "9d5ba06d6ee7418c674f498634617416d15b6239" },
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "dir-telescope.nvim": { "branch": "main", "commit": "1f3a041f870d1edf9cc64635e79f4b829e755978" },

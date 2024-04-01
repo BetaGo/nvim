@@ -539,6 +539,11 @@ require("lazy").setup({
 			-- configurations go here
 		},
 	},
+	{
+		"nvim-zh/colorful-winsep.nvim",
+		config = true,
+		event = { "WinNew" },
+	},
 
 	-- {
 	-- 	"m4xshen/hardtime.nvim",
