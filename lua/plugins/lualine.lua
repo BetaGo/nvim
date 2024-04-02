@@ -37,6 +37,11 @@ require("lualine").setup({
 		},
 		lualine_x = {
 			{
+				"rest",
+				icon = "",
+				fg = "#428890",
+			},
+			{
 				require("noice").api.status.command.get,
 				cond = require("noice").api.status.command.has,
 				-- color = { fg = "#ff9e64" },

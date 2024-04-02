@@ -493,24 +493,26 @@ require("lazy").setup({
 			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 	},
-	-- {
-	-- 	"vhyrro/luarocks.nvim",
-	-- 	branch = "go-away-python",
-	-- 	opts = {
-	-- 		rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }, -- Specify LuaRocks packages to install
-	-- 	},
-	-- 	config = function()
-	-- 		require("luarocks").setup({})
-	-- 	end,
-	-- },
-	-- {
-	-- 	"rest-nvim/rest.nvim",
-	-- 	ft = "http",
-	-- 	-- dependencies = { "luarocks.nvim" },
-	-- 	config = function()
-	-- 		require("rest-nvim").setup()
-	-- 	end,
-	-- },
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1000,
+		config = true,
+		-- branch = "go-away-python",
+		-- opts = {
+		-- 	rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }, -- Specify LuaRocks packages to install
+		-- },
+		-- config = function()
+		-- 	require("luarocks").setup({})
+		-- end,
+	},
+	{
+		"rest-nvim/rest.nvim",
+		ft = "http",
+		-- dependencies = { "luarocks.nvim" },
+		config = function()
+			require("rest-nvim").setup()
+		end,
+	},
 	-- {
 	-- 	"mvllow/modes.nvim",
 	-- 	config = function()
@@ -543,6 +545,12 @@ require("lazy").setup({
 		"nvim-zh/colorful-winsep.nvim",
 		config = true,
 		event = { "WinNew" },
+	},
+
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {}, -- your configuration
 	},
 
 	-- {
