@@ -1,23 +1,23 @@
 require("catppuccin").setup({
 	-- flavour = "mocha", -- latte, frappe, macchiato, mocha
-	-- color_overrides = {
-	-- 	mocha = {
-	-- 		pink = "#f5c2e7",
-	-- 		mauve = "#D699B6",
-	-- 		red = "#e67e80",
-	-- 		maroon = "#eba0ac",
-	-- 		teal = "#7FBBB3",
-	-- 		sapphire = "#74c7ec",
-	-- 		blue = "#7fbbb3",
-	-- 		lavender = "#b4befe",
-	-- 		surface0 = "#232A2E",
-	-- 		overlay2 = "#9399b2",
-	-- 		overlay1 = "#7f849c",
-	-- 		base = "#2D353B",
-	-- 		mantle = "#272e33",
-	-- 		crust = "#2e383c",
-	-- 	},
-	-- },
+	color_overrides = {
+		mocha = {
+			pink = "#f5c2e7",
+			mauve = "#D699B6",
+			red = "#e67e80",
+			maroon = "#eba0ac",
+			teal = "#7FBBB3",
+			sapphire = "#74c7ec",
+			blue = "#7fbbb3",
+			lavender = "#b4befe",
+			surface0 = "#232A2E",
+			overlay2 = "#9399b2",
+			overlay1 = "#7f849c",
+			base = "#2D353B",
+			-- mantle = "#272e33",
+			-- crust = "#2e383c",
+		},
+	},
 	background = { -- :h background
 		light = "latte",
 		dark = "mocha",

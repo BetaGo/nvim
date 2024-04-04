@@ -543,12 +543,16 @@ require("lazy").setup({
 	},
 	{
 		"nvim-zh/colorful-winsep.nvim",
-		config = true,
 		event = { "WinNew" },
+		cond = nocode,
+		config = function()
+			require("plugins.colorful-winsep")
+		end,
 	},
 
 	{
 		"luckasRanarison/tailwind-tools.nvim",
+		cond = nocode,
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {}, -- your configuration
 	},
