@@ -114,12 +114,14 @@ cmp.setup({
 	},
 	window = {
 		completion = {
-			border = "rounded",
+			border = "single",
 			col_offset = -3,
 			side_padding = 0,
 			winhighlight = "Normal:CmpNormal",
 		},
-		documentation = cmp_window.bordered(),
+		documentation = cmp_window.bordered({
+      border = 'single'
+    }),
 	},
 	formatting = {
 		expandable_indicator = true,

@@ -17,21 +17,41 @@ require("chatgpt").setup({
 		answer_sign = "󰚩", -- 🤖
 		border_left_sign = "",
 		border_right_sign = "",
-		max_line_length = 120,
 		sessions_window = {
 			active_sign = " 󰱒 ",
 			inactive_sign = "  ",
 			current_line_sign = "",
 			border = {
-				style = "rounded",
-				text = {
-					top = " Sessions ",
-				},
-			},
-			win_options = {
-				winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+				style = "single",
 			},
 		},
 	},
+	popup_window = {
+		border = {
+			style = "single",
+		},
+	},
+	system_window = {
+		border = {
+			style = "single",
+		},
+	},
+	popup_input = {
+		border = {
+			style = "single",
+		},
+	},
+
+	settings_window = {
+		border = {
+			style = "single",
+		},
+	},
+	help_window = {
+		border = {
+			style = "single",
+		},
+	},
+
 	actions_paths = { plugin_path .. "/chatgpt-actions.json" },
 })

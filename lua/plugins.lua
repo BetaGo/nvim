@@ -551,6 +551,13 @@ return {
 		end,
 	},
 	{ "LudoPinelli/comment-box.nvim" },
+
+	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
+	},
 	-- {
 	-- 	"m4xshen/hardtime.nvim",
 	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },

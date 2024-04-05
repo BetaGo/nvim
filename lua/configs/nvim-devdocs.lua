@@ -7,7 +7,7 @@ require("nvim-devdocs").setup({
 		relative = "editor",
 		height = 50,
 		width = 100,
-		border = "rounded",
+		border = "single",
 	},
 	-- picker_cmd_args = { "-s", vim.o.background, "-w", "70" },
 	after_open = function(bufnr)

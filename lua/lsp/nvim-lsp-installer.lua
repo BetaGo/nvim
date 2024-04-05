@@ -82,7 +82,7 @@ local on_attach = function(_, bufnr)
 			r = { "<cmd>Telescope lsp_references<cr>", "Lists LSP references for word under the cursor" },
 		},
 		["rn"] = {
-			"<cmd>lua vim.lsp.buf.rename()<CR>",
+			":IncRename<space>",
 			"LSP Rename",
 		},
 	}, {

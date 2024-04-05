@@ -3,6 +3,12 @@ package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/shar
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+require("settings")
+
+-- local config
+pcall(require, "local.settings")
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -34,12 +40,8 @@ require("lazy").setup(plugins, {
 	},
 })
 
-require("settings")
 require("command")
 require("autocmd")
-
--- local config
-pcall(require, "local.settings")
 
 -- gui config
 require("gui.neovide")
