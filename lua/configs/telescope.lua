@@ -241,11 +241,13 @@ require("telescope").setup({
 		mappings = {
 			i = {
 				["<C-y>"] = copy_selected_entry,
-				["<c-t>"] = trouble.open_with_trouble,
+				["<C-t>"] = trouble.open_with_trouble,
+				["<C-c>"] = actions.close,
 			},
 			n = {
 				["<C-y>"] = copy_selected_entry,
-				["<c-t>"] = trouble.open_with_trouble,
+				["<C-t>"] = trouble.open_with_trouble,
+				["<C-c>"] = actions.close,
 			},
 		},
 		-- sorting_strategy = "ascending",
@@ -367,3 +369,4 @@ require("telescope").load_extension("dap")
 require("telescope").load_extension("projects")
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("live_grep_args")
+require("telescope").load_extension("lazygit")
