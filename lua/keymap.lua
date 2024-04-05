@@ -27,8 +27,6 @@ vim.keymap.set("n", "gf", function()
 	end
 end, { noremap = false, expr = true })
 
-
-
 wk.register({
 	["<leader><leader>"] = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "show buffers" },
 })
@@ -110,6 +108,14 @@ wk.register({
 		name = "git & generate",
 		g = { "<cmd>LazyGit<cr>", "Show lazygit" },
 		d = { "<cmd>lua require('neogen').generate()<cr>", "Generate Docs use neogen" },
+		c = {
+			name = " □  Boxes",
+			b = { "<Cmd>CBccbox<CR>", "Box Title" },
+			t = { "<Cmd>CBllline<CR>", "Titled Line" },
+			l = { "<Cmd>CBline<CR>", "Simple Line" },
+			m = { "<Cmd>CBllbox14<CR>", "Marked" },
+			d = { "<Cmd>CBd<CR>", "Remove a box" },
+		},
 	},
 }, { prefix = "<leader>" })
 

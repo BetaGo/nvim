@@ -536,9 +536,21 @@ return {
 		"luckasRanarison/tailwind-tools.nvim",
 		cond = nocode,
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		opts = {}, -- your configuration
+		opts = {
+			document_color = {
+				enabled = true,
+				kind = "background",
+			},
+		}, -- your configuration
 	},
-
+	{
+		"gelguy/wilder.nvim",
+		config = function()
+			require("configs.wider")
+			-- config goes here
+		end,
+	},
+	{ "LudoPinelli/comment-box.nvim" },
 	-- {
 	-- 	"m4xshen/hardtime.nvim",
 	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
