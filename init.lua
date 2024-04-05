@@ -17,6 +17,13 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = require("plugins")
 
+local has_local_plugin, local_plugins = pcall(require, "local.plugins")
+if has_local_plugin then
+	for _, v in ipairs(local_plugins) do
+		table.insert(plugins, v)
+	end
+end
+
 require("lazy").setup(plugins, {
 	dev = {
 		-- directory where you store your local plugin projects
@@ -31,6 +38,10 @@ require("settings")
 require("command")
 require("autocmd")
 
+-- local config
+pcall(require, "local.settings")
+
+-- gui config
 require("gui.neovide")
 if vim.g.vscode then
 	require("gui.vscode.keymap")
