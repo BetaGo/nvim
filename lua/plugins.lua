@@ -1,31 +1,13 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
+local nocode = require("utils").nocode
+local no_code_and_neovide = require("utils").no_code_and_neovide
 
-local nocode = function()
-	return vim.fn.exists("g:vscode") == 0
-end
-
-local no_code_and_neovide = function()
-	return vim.fn.exists("g:vscode") == 0 and vim.fn.exists("g:neovide") == 0
-end
-
-require("lazy").setup({
+return {
 	{ "kdheepak/lazygit.nvim", cond = nocode },
 	{
 		cond = nocode,
 		"numToStr/Comment.nvim",
 		config = function()
-			require("plugins.comment")
+			require("configs.comment")
 		end,
 		lazy = false,
 	},
@@ -38,7 +20,7 @@ require("lazy").setup({
 		},
 		cond = nocode,
 		config = function()
-			require("plugins.telescope")
+			require("configs.telescope")
 		end,
 	},
 	{
@@ -61,7 +43,7 @@ require("lazy").setup({
 		cond = nocode,
 		priority = 1000,
 		config = function()
-			require("custom-theme")
+			require("configs.catppuccin")
 		end,
 	},
 	{
@@ -69,14 +51,14 @@ require("lazy").setup({
 		cond = nocode,
 		main = "ibl",
 		config = function()
-			require("plugins.indent-blankline")
+			require("configs.indent-blankline")
 		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		-- cond = nocode,
 		config = function()
-			require("plugins.nvim-treesitter")
+			require("configs.nvim-treesitter")
 		end,
 	},
 	{
@@ -87,7 +69,7 @@ require("lazy").setup({
 		"windwp/nvim-ts-autotag",
 		cond = nocode,
 		config = function()
-			require("plugins.nvim-ts-autotag")
+			require("configs.nvim-ts-autotag")
 		end,
 	},
 	{
@@ -116,7 +98,7 @@ require("lazy").setup({
 		cmd = { "ConformInfo" },
 		cond = nocode,
 		config = function()
-			require("plugins.conform")
+			require("configs.conform")
 		end,
 	},
 	{ "hrsh7th/cmp-nvim-lsp", cond = nocode },
@@ -131,7 +113,7 @@ require("lazy").setup({
 		cond = nocode,
 
 		config = function()
-			require("plugins.nvim-cmp")
+			require("configs.nvim-cmp")
 		end,
 	},
 	{ "saadparwaiz1/cmp_luasnip", cond = nocode },
@@ -142,7 +124,7 @@ require("lazy").setup({
 		version = "2.*",
 		build = "make install_jsregexp",
 		config = function()
-			require("plugins.luasnip")
+			require("configs.luasnip")
 		end,
 	},
 	{
@@ -154,7 +136,7 @@ require("lazy").setup({
 			"mfussenegger/nvim-dap-python",
 		},
 		config = function()
-			require("plugins.nvim-dap")
+			require("configs.nvim-dap")
 		end,
 	},
 	{
@@ -170,7 +152,7 @@ require("lazy").setup({
 		"folke/neodev.nvim",
 		cond = nocode,
 		config = function()
-			require("plugins.neodev")
+			require("configs.neodev")
 		end,
 	},
 	{ "kassio/neoterm", cond = nocode },
@@ -178,7 +160,7 @@ require("lazy").setup({
 		"nvim-lualine/lualine.nvim",
 		cond = nocode,
 		config = function()
-			require("plugins.lualine")
+			require("configs.lualine")
 		end,
 	},
 	-- {
@@ -189,7 +171,7 @@ require("lazy").setup({
 	-- 		"kyazdani42/nvim-web-devicons",
 	-- 	},
 	-- 	config = function()
-	-- 		require("plugins.tabline")
+	-- 		require("configs.tabline")
 	-- 	end,
 	-- },
 	{
@@ -197,7 +179,7 @@ require("lazy").setup({
 		cond = nocode,
 		event = "VeryLazy",
 		config = function()
-			require("plugins.which-key")
+			require("configs.which-key")
 		end,
 	},
 	{ "lambdalisue/suda.vim" },
@@ -206,7 +188,7 @@ require("lazy").setup({
 		event = "VeryLazy",
 		cond = nocode,
 		config = function()
-			require("plugins.noice")
+			require("configs.noice")
 		end,
 		dependencies = {
 			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -222,7 +204,7 @@ require("lazy").setup({
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
 		config = function()
-			require("plugins.nvim-surround")
+			require("configs.nvim-surround")
 		end,
 	},
 	{
@@ -230,7 +212,7 @@ require("lazy").setup({
 		dependencies = { "kyazdani42/nvim-web-devicons" },
 		cond = nocode,
 		config = function()
-			require("plugins.alpha")
+			require("configs.alpha")
 		end,
 	},
 	{ "jmcantrell/vim-diffchanges", cond = nocode },
@@ -240,7 +222,7 @@ require("lazy").setup({
 		dependencies = "nvim-lua/plenary.nvim",
 		cond = nocode,
 		config = function()
-			require("plugins.todo-comments")
+			require("configs.todo-comments")
 		end,
 	},
 	{
@@ -248,7 +230,7 @@ require("lazy").setup({
 		dependencies = "kyazdani42/nvim-web-devicons",
 		cond = nocode,
 		config = function()
-			require("plugins.trouble")
+			require("configs.trouble")
 		end,
 	},
 	{
@@ -263,7 +245,7 @@ require("lazy").setup({
 		"BetaGo/nvim-colorizer.lua",
 		cond = nocode,
 		config = function()
-			require("plugins.nvim-colorizer")
+			require("configs.nvim-colorizer")
 		end,
 	},
 	{
@@ -271,7 +253,7 @@ require("lazy").setup({
 		cond = nocode,
 		event = "InsertEnter",
 		config = function()
-			require("plugins.autopairs")
+			require("configs.autopairs")
 		end,
 	},
 	{
@@ -291,14 +273,14 @@ require("lazy").setup({
 		"simrat39/symbols-outline.nvim",
 		cond = nocode,
 		config = function()
-			require("plugins.symbols-outline")
+			require("configs.symbols-outline")
 		end,
 	},
 	{
 		"danymat/neogen",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = function()
-			require("plugins.neogen")
+			require("configs.neogen")
 		end,
 	},
 	{
@@ -348,7 +330,7 @@ require("lazy").setup({
 		event = "VeryLazy",
 		cond = nocode,
 		config = function()
-			require("plugins.chatgpt")
+			require("configs.chatgpt")
 		end,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
@@ -368,7 +350,7 @@ require("lazy").setup({
 		cond = nocode,
 		event = "VeryLazy",
 		config = function()
-			require("plugins.nvim-devdocs")
+			require("configs.nvim-devdocs")
 		end,
 	},
 	{
@@ -400,14 +382,14 @@ require("lazy").setup({
 		"ahmedkhalf/project.nvim",
 		cond = nocode,
 		config = function()
-			require("plugins.project")
+			require("configs.project")
 		end,
 	},
 	{
 		"mfussenegger/nvim-lint",
 		cond = nocode,
 		config = function()
-			require("plugins.nvim-lint")
+			require("configs.nvim-lint")
 		end,
 	},
 	{ "nvim-pack/nvim-spectre", cond = nocode }, -- search & replace text
@@ -435,7 +417,7 @@ require("lazy").setup({
 		dependencies = "kevinhwang91/promise-async",
 		cond = nocode,
 		config = function()
-			require("plugins.nvim-ufo")
+			require("configs.nvim-ufo")
 		end,
 	},
 	{
@@ -480,7 +462,7 @@ require("lazy").setup({
 		"3rd/image.nvim",
 		cond = no_code_and_neovide(),
 		config = function()
-			require("plugins.image")
+			require("configs.image")
 		end,
 	},
 	{
@@ -546,7 +528,7 @@ require("lazy").setup({
 		event = { "WinNew" },
 		cond = nocode,
 		config = function()
-			require("plugins.colorful-winsep")
+			require("configs.colorful-winsep")
 		end,
 	},
 
@@ -562,12 +544,4 @@ require("lazy").setup({
 	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
 	-- 	opts = {},
 	-- },
-}, {
-	dev = {
-		-- directory where you store your local plugin projects
-		path = require("user-conf").workspace_path,
-		---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
-		patterns = {}, -- For example {"folke"}
-		fallback = false, -- Fallback to git when local plugin doesn't exist
-	},
-})
+}
