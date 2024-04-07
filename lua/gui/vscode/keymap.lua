@@ -1,6 +1,8 @@
+local wk = require("which-key")
+
 --Remap space as leader key
 -- vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
-vim.keymap.set("", "<Space>", "<Nop>")
+vim.keymap.set("", "<Space>", "<Nop>") -- https://github.com/vscode-neovim/vscode-neovim/issues/1137#issuecomment-1936954633
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -8,6 +10,20 @@ vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true, expr = false, silent =
 vim.api.nvim_set_keymap("v", "k", "gk", { noremap = true, expr = false, silent = true })
 vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true, expr = false, silent = true })
 vim.api.nvim_set_keymap("v", "j", "gj", { noremap = true, expr = false, silent = true })
+
+wk.register({
+	g = {
+		name = "generate",
+		c = {
+			name = " □  Boxes",
+			b = { "<Cmd>CBccbox<CR>", "Box Title" },
+			t = { "<Cmd>CBllline<CR>", "Titled Line" },
+			l = { "<Cmd>CBline<CR>", "Simple Line" },
+			m = { "<Cmd>CBllbox14<CR>", "Marked" },
+			d = { "<Cmd>CBd<CR>", "Remove a box" },
+		},
+	},
+}, { prefix = "<leader>" })
 
 -- navigate
 vim.api.nvim_set_keymap(

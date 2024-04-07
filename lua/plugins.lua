@@ -30,13 +30,6 @@ return {
 		end,
 	},
 	{
-		"danymat/neogen",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = function()
-			require("configs.neogen")
-		end,
-	},
-	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		---@type Flash.Config
@@ -66,10 +59,39 @@ return {
 			require("textcase").setup({})
 		end,
 	},
+	{ "LudoPinelli/comment-box.nvim" },
+	{ "ojroques/nvim-osc52" },
+	{
+		"folke/which-key.nvim",
+		-- cond = nocode,
+		event = "VeryLazy",
+		config = function()
+			require("configs.which-key")
+		end,
+	},
 	--          ╭─────────────────────────────────────────────────────────╮
 	--          │        all of 👇 should not load when use vscode        │
 	--          ╰─────────────────────────────────────────────────────────╯
 	{ "kdheepak/lazygit.nvim", cond = nocode },
+	{
+		"danymat/neogen",
+		cond = nocode,
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("configs.neogen")
+		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		cond = nocode,
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "2.*",
+		build = "make install_jsregexp",
+		config = function()
+			require("configs.luasnip")
+		end,
+	},
+
 	{
 		cond = nocode,
 		"numToStr/Comment.nvim",
@@ -156,16 +178,7 @@ return {
 		end,
 	},
 	{ "saadparwaiz1/cmp_luasnip", cond = nocode },
-	{
-		"L3MON4D3/LuaSnip",
-		cond = nocode,
-		dependencies = { "rafamadriz/friendly-snippets" },
-		version = "2.*",
-		build = "make install_jsregexp",
-		config = function()
-			require("configs.luasnip")
-		end,
-	},
+
 	{
 		"mfussenegger/nvim-dap",
 		cond = nocode,
@@ -202,14 +215,7 @@ return {
 			require("configs.lualine")
 		end,
 	},
-	{
-		"folke/which-key.nvim",
-		cond = nocode,
-		event = "VeryLazy",
-		config = function()
-			require("configs.which-key")
-		end,
-	},
+
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -289,7 +295,6 @@ return {
 		end,
 	},
 
-	{ "ojroques/nvim-osc52" },
 	{
 		"jackMort/ChatGPT.nvim",
 		event = "VeryLazy",
@@ -418,6 +423,7 @@ return {
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
+		cond = nocode,
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -428,6 +434,7 @@ return {
 	},
 	{
 		"vhyrro/luarocks.nvim",
+		cond = nocode,
 		priority = 1000,
 		config = true,
 		-- branch = "go-away-python",
@@ -447,22 +454,6 @@ return {
 			require("rest-nvim").setup()
 		end,
 	},
-	-- {
-	-- 	"mvllow/modes.nvim",
-	-- 	config = function()
-	-- 		require("modes").setup({
-	-- 			line_opacity = {
-	-- 				visual = 0.1,
-	-- 			},
-	-- 			colors = {
-	-- 				copy = "#f5c359",
-	-- 				delete = "#c75c6a",
-	-- 				insert = "#78ccc5",
-	-- 				visual = "#9745be",
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"utilyre/barbecue.nvim",
 		cond = nocode,
@@ -494,7 +485,7 @@ return {
 				enabled = true,
 				kind = "background",
 			},
-		}, -- your configuration
+		},
 	},
 	{
 		"gelguy/wilder.nvim",
@@ -503,8 +494,6 @@ return {
 			require("configs.wider")
 		end,
 	},
-	{ "LudoPinelli/comment-box.nvim" },
-
 	{
 		"smjonas/inc-rename.nvim",
 		cond = nocode,
