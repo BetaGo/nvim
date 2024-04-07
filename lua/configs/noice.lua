@@ -18,6 +18,24 @@ require("noice").setup({
 				style = "single",
 			},
 		},
+		popupmenu = {
+			relative = "editor",
+			position = {
+				row = 8,
+				col = "50%",
+			},
+			size = {
+				width = 60,
+				height = 10,
+			},
+			border = {
+				style = "single",
+				padding = { 0, 1 },
+			},
+			win_options = {
+				winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+			},
+		},
 	},
 	lsp = {
 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -52,7 +70,7 @@ require("notify").setup({
 	render = "wrapped-compact",
 	on_open = function(win)
 		local config = vim.api.nvim_win_get_config(win)
-    config.border = "single";
+		config.border = "single"
 		vim.api.nvim_win_set_config(win, config)
 	end,
 })

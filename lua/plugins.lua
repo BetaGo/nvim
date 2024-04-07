@@ -2,6 +2,73 @@ local nocode = require("utils").nocode
 local no_code_and_neovide = require("utils").no_code_and_neovide
 
 return {
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		-- dev = true,
+		priority = 1000,
+		config = function()
+			require("configs.catppuccin")
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("configs.nvim-treesitter")
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+	},
+	{ "lambdalisue/suda.vim" },
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("configs.nvim-surround")
+		end,
+	},
+	{
+		"danymat/neogen",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("configs.neogen")
+		end,
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		---@type Flash.Config
+		opts = {},
+		keys = {
+			{
+				"s",
+				mode = { "n", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
+			},
+			{
+				"S",
+				mode = { "n", "o" },
+				function()
+					require("flash").treesitter()
+				end,
+				desc = "Flash Treesitter",
+			},
+		},
+	},
+	{
+		"johmsalas/text-case.nvim",
+		config = function()
+			require("textcase").setup({})
+		end,
+	},
+	--          ╭─────────────────────────────────────────────────────────╮
+	--          │        all of 👇 should not load when use vscode        │
+	--          ╰─────────────────────────────────────────────────────────╯
 	{ "kdheepak/lazygit.nvim", cond = nocode },
 	{
 		cond = nocode,
@@ -34,18 +101,7 @@ return {
 	},
 	{ "nvim-telescope/telescope-ui-select.nvim", cond = nocode },
 	{ "princejoogie/dir-telescope.nvim", cond = nocode },
-	{
-		-- "projekt0n/github-nvim-theme"
-		-- "BetaGo/everforest-nvim",
-		"catppuccin/nvim",
-		name = "catppuccin",
-		-- dev = true,
-		cond = nocode,
-		priority = 1000,
-		config = function()
-			require("configs.catppuccin")
-		end,
-	},
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		cond = nocode,
@@ -54,24 +110,7 @@ return {
 			require("configs.indent-blankline")
 		end,
 	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		-- cond = nocode,
-		config = function()
-			require("configs.nvim-treesitter")
-		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		-- cond = nocode
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		cond = nocode,
-		config = function()
-			require("configs.nvim-ts-autotag")
-		end,
-	},
+
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
@@ -163,17 +202,6 @@ return {
 			require("configs.lualine")
 		end,
 	},
-	-- {
-	-- 	"kdheepak/tabline.nvim",
-	-- 	cond = nocode,
-	-- 	dependencies = {
-	-- 		"nvim-lualine/lualine.nvim",
-	-- 		"kyazdani42/nvim-web-devicons",
-	-- 	},
-	-- 	config = function()
-	-- 		require("configs.tabline")
-	-- 	end,
-	-- },
 	{
 		"folke/which-key.nvim",
 		cond = nocode,
@@ -182,7 +210,6 @@ return {
 			require("configs.which-key")
 		end,
 	},
-	{ "lambdalisue/suda.vim" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -199,14 +226,7 @@ return {
 			"rcarriga/nvim-notify",
 		},
 	},
-	{
-		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
-		event = "VeryLazy",
-		config = function()
-			require("configs.nvim-surround")
-		end,
-	},
+
 	{
 		"goolord/alpha-nvim",
 		dependencies = { "kyazdani42/nvim-web-devicons" },
@@ -216,7 +236,7 @@ return {
 		end,
 	},
 	{ "jmcantrell/vim-diffchanges", cond = nocode },
-	{ "sindrets/diffview.nvim" },
+	{ "sindrets/diffview.nvim", cond = nocode },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
@@ -232,14 +252,6 @@ return {
 		config = function()
 			require("configs.trouble")
 		end,
-	},
-	{
-		"folke/twilight.nvim",
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-		},
 	},
 	{
 		"BetaGo/nvim-colorizer.lua",
@@ -263,7 +275,7 @@ return {
 	{
 		"j-hui/fidget.nvim",
 		cond = nocode,
-		tag = "legacy",
+		-- tag = "legacy",
 		event = "LspAttach",
 		opts = {
 			-- options
@@ -276,54 +288,7 @@ return {
 			require("configs.symbols-outline")
 		end,
 	},
-	{
-		"danymat/neogen",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = function()
-			require("configs.neogen")
-		end,
-	},
-	{
-		"folke/flash.nvim",
-		-- cond = nocode,
-		event = "VeryLazy",
-		---@type Flash.Config
-		opts = {},
-		keys = {
-			{
-				"s",
-				mode = { "n", "o" },
-				function()
-					require("flash").jump()
-				end,
-				desc = "Flash",
-			},
-			{
-				"S",
-				mode = { "n", "o" },
-				function()
-					require("flash").treesitter()
-				end,
-				desc = "Flash Treesitter",
-			},
-			-- {
-			-- 	"R",
-			-- 	mode = { "o", "x" },
-			-- 	function()
-			-- 		require("flash").treesitter_search()
-			-- 	end,
-			-- 	desc = "Treesitter Search",
-			-- },
-			-- {
-			-- 	"<c-s>",
-			-- 	mode = { "c" },
-			-- 	function()
-			-- 		require("flash").toggle()
-			-- 	end,
-			-- 	desc = "Toggle Flash Search",
-			-- },
-		},
-	},
+
 	{ "ojroques/nvim-osc52" },
 	{
 		"jackMort/ChatGPT.nvim",
@@ -408,11 +373,6 @@ return {
 		end,
 	},
 	{
-		"stevearc/dressing.nvim",
-		cond = nocode,
-		opts = {},
-	},
-	{
 		"kevinhwang91/nvim-ufo",
 		dependencies = "kevinhwang91/promise-async",
 		cond = nocode,
@@ -431,26 +391,17 @@ return {
 	},
 	{ "olrtg/nvim-emmet", cond = nocode },
 	{ "eandrju/cellular-automaton.nvim", cond = nocode },
-	{
-		"johmsalas/text-case.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("textcase").setup({})
-			require("telescope").load_extension("textcase")
-		end,
-		keys = {
-			"ga", -- Default invocation prefix
-			{ "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "v" }, desc = "Telescope" },
-		},
-	},
+
 	{
 		"stevearc/oil.nvim",
+		cond = nocode,
 		opts = {},
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
 		"BetaGo/markdown-preview.nvim",
+		cond = nocode,
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
 		build = "cd app && yarn install",
@@ -489,6 +440,7 @@ return {
 	},
 	{
 		"rest-nvim/rest.nvim",
+		cond = nocode,
 		ft = "http",
 		-- dependencies = { "luarocks.nvim" },
 		config = function()
@@ -513,6 +465,7 @@ return {
 	-- },
 	{
 		"utilyre/barbecue.nvim",
+		cond = nocode,
 		name = "barbecue",
 		version = "*",
 		dependencies = {
@@ -545,15 +498,16 @@ return {
 	},
 	{
 		"gelguy/wilder.nvim",
+		cond = nocode,
 		config = function()
 			require("configs.wider")
-			-- config goes here
 		end,
 	},
 	{ "LudoPinelli/comment-box.nvim" },
 
 	{
 		"smjonas/inc-rename.nvim",
+		cond = nocode,
 		config = function()
 			require("inc_rename").setup()
 		end,

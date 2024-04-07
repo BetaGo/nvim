@@ -15,7 +15,7 @@ require("catppuccin").setup({
 			overlay1 = "#7f849c",
 			base = "#2D353B",
 			mantle = "#343F44",
-			crust = "#543A48",
+			crust = "#3D484D",
 		},
 	},
 	background = { -- :h background

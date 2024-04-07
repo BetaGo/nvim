@@ -42,6 +42,7 @@ require("lazy").setup(plugins, {
 
 require("command")
 require("autocmd")
+require("theme")
 
 -- gui config
 require("gui.neovide")
@@ -51,5 +52,4 @@ if vim.g.vscode then
 else
 	require("keymap")
 	require("lsp")
-	require("theme")
 end
