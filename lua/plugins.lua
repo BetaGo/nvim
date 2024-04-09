@@ -406,6 +406,7 @@ return {
 	},
 	{
 		"BetaGo/markdown-preview.nvim",
+    -- dev = true,
 		cond = nocode,
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },

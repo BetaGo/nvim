@@ -18,6 +18,11 @@ require("catppuccin").setup({
 			crust = "#3D484D",
 		},
 	},
+	custom_highlights = function(colors)
+		return {
+			-- FloatBorder = { bg = colors.none, fg = colors.none },
+		}
+	end,
 	background = { -- :h background
 		light = "latte",
 		dark = "mocha",

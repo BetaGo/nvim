@@ -28,16 +28,22 @@ require("chatgpt").setup({
 	},
 	popup_window = {
 		border = {
+			highlight = "Normal:Normal,FloatBorder:FloatBorder",
 			style = "single",
+		},
+		win_options = {
+			winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
 		},
 	},
 	system_window = {
 		border = {
+			highlight = "Normal:Normal,FloatBorder:FloatBorder",
 			style = "single",
 		},
 	},
 	popup_input = {
 		border = {
+			highlight = "Normal:Normal,FloatBorder:FloatBorder",
 			style = "single",
 		},
 	},
