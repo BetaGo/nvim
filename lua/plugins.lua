@@ -292,14 +292,6 @@ return {
 		},
 	},
 	{
-		"simrat39/symbols-outline.nvim",
-		cond = nocode,
-		config = function()
-			require("configs.symbols-outline")
-		end,
-	},
-
-	{
 		"jackMort/ChatGPT.nvim",
 		event = "VeryLazy",
 		cond = nocode,
