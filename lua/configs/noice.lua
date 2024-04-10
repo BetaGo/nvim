@@ -67,6 +67,7 @@ require("noice").setup({
 })
 
 require("notify").setup({
+	top_down = false,
 	render = "wrapped-compact",
 	on_open = function(win)
 		local config = vim.api.nvim_win_get_config(win)
