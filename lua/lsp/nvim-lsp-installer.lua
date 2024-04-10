@@ -17,6 +17,7 @@ local lsp_servers = {
 	svelte = true,
 	jsonls = true,
 	emmet_language_server = true,
+	clangd = true,
 
 	-- special lsp config
 	rust_analyzer = false,
@@ -30,10 +31,12 @@ local ensure_installed_others = {
 	-- formatters
 	"prettier",
 	"stylua",
+	"clang-format",
 
 	-- daps
 	"debugpy",
 	"js-debug-adapter",
+	"cpptools",
 }
 
 vim.api.nvim_create_user_command("MasonInstallAll", function()

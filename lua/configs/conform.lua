@@ -18,6 +18,7 @@ require("conform").setup({
 		typescript = { { "prettier" } },
 		typescriptreact = { { "prettier" } },
 		vue = { { "prettier" } },
+		c = { { "clang-format" } },
 	},
 })
 

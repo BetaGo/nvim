@@ -406,7 +406,7 @@ return {
 	},
 	{
 		"BetaGo/markdown-preview.nvim",
-    -- dev = true,
+		-- dev = true,
 		cond = nocode,
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
@@ -469,15 +469,6 @@ return {
 		},
 	},
 	{
-		"nvim-zh/colorful-winsep.nvim",
-		event = { "WinNew" },
-		cond = nocode,
-		config = function()
-			require("configs.colorful-winsep")
-		end,
-	},
-
-	{
 		"luckasRanarison/tailwind-tools.nvim",
 		cond = nocode,
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -487,13 +478,6 @@ return {
 				kind = "background",
 			},
 		},
-	},
-	{
-		"gelguy/wilder.nvim",
-		cond = nocode,
-		config = function()
-			require("configs.wider")
-		end,
 	},
 	{
 		"smjonas/inc-rename.nvim",
