@@ -54,6 +54,10 @@ return {
 		},
 	},
 	{
+		"folke/zen-mode.nvim",
+		opts = {},
+	},
+	{
 		"johmsalas/text-case.nvim",
 		config = function()
 			require("textcase").setup({})

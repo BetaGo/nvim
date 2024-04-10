@@ -41,6 +41,15 @@ wk.register({
 })
 
 wk.register({
+	["<leader>e"] = {
+		"<cmd>ZenMode<CR>",
+		"Toggle Zen Mode",
+	},
+}, {
+	mode = { "n", "v" },
+})
+
+wk.register({
 	c = {
 		name = "ChatGPT & Change",
 		c = { "<cmd>ChatGPT<CR>", "ChatGPT" },

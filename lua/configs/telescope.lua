@@ -1,39 +1,11 @@
-local Layout = require("nui.layout")
-local Popup = require("nui.popup")
 local actions = require("telescope.actions")
-local previewers = require("telescope.previewers")
 local trouble = require("trouble.providers.telescope")
-local TSLayout = require("telescope.pickers.layout")
-
-local function make_popup(options)
-	local popup = Popup(options)
-	function popup.border:change_title(title)
-		popup.border.set_text(popup.border, "top", title)
-	end
-	return TSLayout.Window(popup)
-end
 
 require("dir-telescope").setup({
 	hidden = false,
 	no_ignore = true,
 	show_preview = true,
 })
-
-local new_maker = function(filepath, bufnr, opts)
-	opts = opts or {}
-
-	filepath = vim.fn.expand(filepath)
-	vim.loop.fs_stat(filepath, function(_, stat)
-		if not stat then
-			return
-		end
-		if stat.size > 100000 then
-			return
-		else
-			previewers.buffer_previewer_maker(filepath, bufnr, opts)
-		end
-	end)
-end
 
 local copy_selected_entry = function(prompt_bufnr)
 	local path = require("telescope.actions.state").get_selected_entry().value
