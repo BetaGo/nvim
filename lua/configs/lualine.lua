@@ -30,8 +30,9 @@ require("lualine").setup({
 					dos = "", -- e70f
 					mac = "", -- e711
 				},
+				separator = { left = "" },
 			},
-			"mode",
+			{ "mode" },
 		},
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = {
@@ -53,7 +54,7 @@ require("lualine").setup({
 			"filetype",
 		},
 		lualine_y = { "progress" },
-		lualine_z = { "location", "selectioncount" },
+		lualine_z = { "selectioncount", { "location", separator = { right = "" }, left_padding = 2 } },
 	},
 	inactive_sections = {
 		lualine_a = {},
