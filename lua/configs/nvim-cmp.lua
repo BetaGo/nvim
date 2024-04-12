@@ -120,8 +120,8 @@ cmp.setup({
 			winhighlight = "Normal:CmpNormal",
 		},
 		documentation = cmp_window.bordered({
-      border = 'single'
-    }),
+			border = "single",
+		}),
 	},
 	formatting = {
 		expandable_indicator = true,
@@ -165,10 +165,15 @@ cmp.setup({
 							hl_group = "CmpItemKindUnit",
 							kind = " Treesitter",
 						},
-						TypeParameter = {
+            ['vim-dadbod-completion'] = {
+
 							hl_group = "CmpItemKindText",
-							kind = "󰰦 TypeParameter",
-						},
+							kind = " DB",
+            },
+            spell = {
+							hl_group = "CmpItemKindText",
+							kind = "󰓆 Spell",
+            }
 					})[entry_l.source.name]
 					if k then
 						vim_item_l.kind = k.kind
@@ -184,3 +189,12 @@ cmp.setup({
 		end,
 	},
 })
+
+cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
+	sources = cmp.config.sources({
+		{ name = "vim-dadbod-completion" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+	}, {
+		{ name = "buffer" },
+	}),
+})
+
