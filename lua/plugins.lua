@@ -3,6 +3,7 @@ local no_code_and_neovide = require("utils").no_code_and_neovide
 
 return {
 	{
+
 		"catppuccin/nvim",
 		name = "catppuccin",
 		-- dev = true,
@@ -54,17 +55,12 @@ return {
 		},
 	},
 	{
-		"folke/zen-mode.nvim",
-		opts = {},
-	},
-	{
 		"johmsalas/text-case.nvim",
 		config = function()
 			require("textcase").setup({})
 		end,
 	},
 	{ "LudoPinelli/comment-box.nvim" },
-	{ "ojroques/nvim-osc52" },
 	{
 		"folke/which-key.nvim",
 		-- cond = nocode,
@@ -74,18 +70,26 @@ return {
 		end,
 	},
 
+	--          ╭─────────────────────────────────────────────────────────╮
+	--          │        all of 👇 should not load when use vscode        │
+	--          ╰─────────────────────────────────────────────────────────╯
+	{ "kdheepak/lazygit.nvim", cond = nocode },
+
+	{ "ojroques/nvim-osc52", cond = nocode },
 	{
 		"mistricky/codesnap.nvim",
+		cond = nocode,
 		build = "make",
 		config = function()
 			require("configs.codesnap")
 		end,
 	},
 
-	--          ╭─────────────────────────────────────────────────────────╮
-	--          │        all of 👇 should not load when use vscode        │
-	--          ╰─────────────────────────────────────────────────────────╯
-	{ "kdheepak/lazygit.nvim", cond = nocode },
+	{
+		"folke/zen-mode.nvim",
+		cond = nocode,
+		opts = {},
+	},
 	{
 		"danymat/neogen",
 		cond = nocode,
@@ -497,6 +501,7 @@ return {
 	},
 	{
 		"kristijanhusak/vim-dadbod-ui",
+		cond = nocode,
 		dependencies = {
 			{ "tpope/vim-dadbod", lazy = true },
 			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
