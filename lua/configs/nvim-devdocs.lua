@@ -13,6 +13,6 @@ require("nvim-devdocs").setup({
 	},
 	-- picker_cmd_args = { "-s", vim.o.background, "-w", "70" },
 	after_open = function(bufnr)
-		vim.api.nvim_buf_set_keymap(bufnr, "n", "<Esc>", ":close<CR>", {})
+		vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-c>", ":close<CR>", {})
 	end,
 })
