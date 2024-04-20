@@ -18,7 +18,6 @@ local lsp_servers = {
 	jsonls = true,
 	emmet_language_server = true,
 	clangd = true,
-	sqls = true,
 
 	-- special lsp config
 	rust_analyzer = false,
