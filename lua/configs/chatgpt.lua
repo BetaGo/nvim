@@ -1,5 +1,6 @@
 -- local plugin_path = vim.fn.expand("$VIMRUNTIME")
 local plugin_path = vim.api.nvim_get_runtime_file("", true)[1]
+local border_style = require("user-conf").nui_border_style
 
 require("chatgpt").setup({
 	openai_edit_params = {
@@ -22,14 +23,14 @@ require("chatgpt").setup({
 			inactive_sign = "  ",
 			current_line_sign = "",
 			border = {
-				style = "single",
+				style = border_style,
 			},
 		},
 	},
 	popup_window = {
 		border = {
 			highlight = "Normal:Normal,FloatBorder:FloatBorder",
-			style = "single",
+			style = border_style,
 		},
 		win_options = {
 			winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
@@ -38,24 +39,24 @@ require("chatgpt").setup({
 	system_window = {
 		border = {
 			highlight = "Normal:Normal,FloatBorder:FloatBorder",
-			style = "single",
+			style = border_style,
 		},
 	},
 	popup_input = {
 		border = {
 			highlight = "Normal:Normal,FloatBorder:FloatBorder",
-			style = "single",
+			style = border_style,
 		},
 	},
 
 	settings_window = {
 		border = {
-			style = "single",
+			style = border_style,
 		},
 	},
 	help_window = {
 		border = {
-			style = "single",
+			style = border_style,
 		},
 	},
 

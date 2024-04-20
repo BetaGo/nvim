@@ -1,3 +1,5 @@
+local border_style = require("user-conf").nui_border_style
+
 require("nvim-devdocs").setup({
 	-- previewer_cmd = "glow",
 	-- cmd_args = { "-s", "dracula", "-w", "80" },
@@ -7,7 +9,7 @@ require("nvim-devdocs").setup({
 		relative = "editor",
 		height = 50,
 		width = 100,
-		border = "single",
+		border = border_style,
 	},
 	-- picker_cmd_args = { "-s", vim.o.background, "-w", "70" },
 	after_open = function(bufnr)

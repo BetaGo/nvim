@@ -5,6 +5,7 @@ local cmp = require("cmp")
 local cmp_window = require("cmp.config.window")
 local devicons = require("nvim-web-devicons")
 local lspkind = require("lspkind")
+local border_style = require("user-conf").nui_border_style
 
 lspkind.init({
 	-- DEPRECATED (use mode instead): enables text annotations
@@ -114,13 +115,13 @@ cmp.setup({
 	},
 	window = {
 		completion = {
-			border = "single",
+			border = border_style,
 			col_offset = -3,
 			side_padding = 0,
 			winhighlight = "Normal:CmpNormal",
 		},
 		documentation = cmp_window.bordered({
-			border = "single",
+			border = border_style,
 		}),
 	},
 	formatting = {
@@ -165,15 +166,15 @@ cmp.setup({
 							hl_group = "CmpItemKindUnit",
 							kind = " Treesitter",
 						},
-            ['vim-dadbod-completion'] = {
+						["vim-dadbod-completion"] = {
 
 							hl_group = "CmpItemKindText",
 							kind = " DB",
-            },
-            spell = {
+						},
+						spell = {
 							hl_group = "CmpItemKindText",
 							kind = "󰓆 Spell",
-            }
+						},
 					})[entry_l.source.name]
 					if k then
 						vim_item_l.kind = k.kind
@@ -197,4 +198,3 @@ cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
 		{ name = "buffer" },
 	}),
 })
-

@@ -1,8 +1,10 @@
+local border_style = require("user-conf").nui_border_style
+
 require("noice").setup({
 	views = {
 		cmdline_popup = {
 			border = {
-				style = "single",
+				style = border_style,
 			},
 			position = {
 				row = 5,
@@ -15,7 +17,13 @@ require("noice").setup({
 		},
 		hover = {
 			border = {
-				style = "single",
+				style = border_style,
+			},
+			win_options = {
+				winhighlight = {
+					Normal = "Normal",
+					FloatBorder = "FloatBorder",
+				},
 			},
 		},
 		popupmenu = {
@@ -29,11 +37,14 @@ require("noice").setup({
 				height = 10,
 			},
 			border = {
-				style = "single",
+				style = border_style,
 				padding = { 0, 1 },
 			},
 			win_options = {
-				winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+				winhighlight = {
+					Normal = "Normal",
+					FloatBorder = "FloatBorder",
+				},
 			},
 		},
 	},
@@ -71,7 +82,7 @@ require("notify").setup({
 	render = "wrapped-compact",
 	on_open = function(win)
 		local config = vim.api.nvim_win_get_config(win)
-		config.border = "single"
+		config.border = border_style
 		vim.api.nvim_win_set_config(win, config)
 	end,
 })
