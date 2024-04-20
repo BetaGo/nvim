@@ -90,19 +90,13 @@ return {
 			require("configs.codesnap")
 		end,
 	},
-	-- {
-	-- 	"sontungexpt/url-open",
-	-- 	cond = nocode,
-	-- 	event = "VeryLazy",
-	-- 	cmd = "URLOpenUnderCursor",
-	-- 	config = function()
-	-- 		local status_ok, url_open = pcall(require, "url-open")
-	-- 		if not status_ok then
-	-- 			return
-	-- 		end
-	-- 		url_open.setup({})
-	-- 	end,
-	-- },
+	{
+		"AckslD/nvim-FeMaco.lua",
+		cond = nocode,
+		config = function()
+			require("femaco").setup()
+		end,
+	},
 	{
 		"folke/zen-mode.nvim",
 		cond = nocode,
