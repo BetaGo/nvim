@@ -18,6 +18,7 @@ local lsp_servers = {
 	jsonls = true,
 	emmet_language_server = true,
 	clangd = true,
+	sqls = true,
 
 	-- special lsp config
 	rust_analyzer = false,
@@ -61,6 +62,9 @@ require("mason-lspconfig").setup({
 
 -- LSP settings
 local on_attach = function(_, bufnr)
+	if vim.lsp.inlay_hint then
+		vim.lsp.inlay_hint.enable(bufnr, true)
+	end
 	wk.register({
 		l = {
 			name = "Language Actions",
@@ -145,6 +149,19 @@ end
 -- for typescript
 require("typescript-tools").setup({
 	on_attach = on_attach,
+	settings = {
+		tsserver_file_preferences = {
+			-- Inlay Hints
+			includeInlayParameterNameHints = "all",
+			includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+			includeInlayFunctionParameterTypeHints = true,
+			includeInlayVariableTypeHints = true,
+			includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+			includeInlayPropertyDeclarationTypeHints = true,
+			includeInlayFunctionLikeReturnTypeHints = true,
+			includeInlayEnumMemberValueHints = true,
+		},
+	},
 })
 
 -- for rust

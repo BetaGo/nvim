@@ -22,6 +22,7 @@ require("nvim-treesitter.configs").setup({
 		"xml",
 		"http",
 		"graphql",
+    "mermaid",
 	},
 	highlight = {
 		enable = true,

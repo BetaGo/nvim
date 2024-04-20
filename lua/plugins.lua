@@ -62,6 +62,12 @@ return {
 	},
 	{ "LudoPinelli/comment-box.nvim" },
 	{
+		"monaqa/dial.nvim",
+		config = function()
+			require("configs.dial")
+		end,
+	},
+	{
 		"folke/which-key.nvim",
 		-- cond = nocode,
 		event = "VeryLazy",
@@ -74,8 +80,8 @@ return {
 	--          │        all of 👇 should not load when use vscode        │
 	--          ╰─────────────────────────────────────────────────────────╯
 	{ "kdheepak/lazygit.nvim", cond = nocode },
-
 	{ "ojroques/nvim-osc52", cond = nocode },
+	{ "b0o/schemastore.nvim", cond = nocode },
 	{
 		"mistricky/codesnap.nvim",
 		cond = nocode,
@@ -84,7 +90,19 @@ return {
 			require("configs.codesnap")
 		end,
 	},
-
+	-- {
+	-- 	"sontungexpt/url-open",
+	-- 	cond = nocode,
+	-- 	event = "VeryLazy",
+	-- 	cmd = "URLOpenUnderCursor",
+	-- 	config = function()
+	-- 		local status_ok, url_open = pcall(require, "url-open")
+	-- 		if not status_ok then
+	-- 			return
+	-- 		end
+	-- 		url_open.setup({})
+	-- 	end,
+	-- },
 	{
 		"folke/zen-mode.nvim",
 		cond = nocode,

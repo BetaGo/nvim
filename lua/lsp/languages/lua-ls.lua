@@ -25,6 +25,7 @@ function P.lsp_opts(opts)
 			telemetry = {
 				enable = false,
 			},
+			hint = { enable = true },
 		},
 	}
 end
