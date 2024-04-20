@@ -62,7 +62,8 @@ require("mason-lspconfig").setup({
 -- LSP settings
 local on_attach = function(_, bufnr)
 	if vim.lsp.inlay_hint then
-		vim.lsp.inlay_hint.enable(bufnr, true)
+		-- vim.lsp.inlay_hint.enable(bufnr, true)
+		vim.lsp.inlay_hint.enable()
 	end
 	wk.register({
 		l = {
