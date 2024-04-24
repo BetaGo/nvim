@@ -109,10 +109,6 @@ local on_attach = function(_, bufnr)
 			"<cmd>lua vim.lsp.buf.hover()<CR>",
 			"LSP Hover",
 		},
-		["<C-k>"] = {
-			"<cmd>lua vim.lsp.buf.signature_help()<CR>",
-			"LSP Signature Help",
-		},
 	}, {
 		buffer = bufnr,
 	})

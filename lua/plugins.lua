@@ -83,6 +83,13 @@ return {
 	{ "ojroques/nvim-osc52", cond = nocode },
 	{ "b0o/schemastore.nvim", cond = nocode },
 	{
+		"aserowy/tmux.nvim",
+		cond = nocode,
+		config = function()
+			return require("tmux").setup()
+		end,
+	},
+	{
 		"mistricky/codesnap.nvim",
 		cond = nocode,
 		build = "make",
@@ -436,13 +443,13 @@ return {
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 	},
-	{
-		"3rd/image.nvim",
-		cond = no_code_and_neovide(),
-		config = function()
-			require("configs.image")
-		end,
-	},
+	-- {
+	-- 	"3rd/image.nvim",
+	-- 	cond = no_code_and_neovide(),
+	-- 	config = function()
+	-- 		require("configs.image")
+	-- 	end,
+	-- },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		cond = nocode,
@@ -451,7 +458,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
-			"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 	},
 	{
